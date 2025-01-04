@@ -1,0 +1,29 @@
+h1 {
+  /* background: linear-gradient(to bottom, #ea9caf, #ea9caf);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; */
+  color: #ea9caf;
+  width: 100%;
+  display: block;
+  margin: 1em 0 3em 0;
+  /* simulate a pre tag */
+  white-space: pre;
+  font-size: 1rem;
+  line-height: 1em;
+  text-align: left;
+}
+
+h1 a, h1 a:active, h1 a:visited {
+  color: #ea9caf;
+  text-decoration: none;
+  width: 100%;
+  display: block;
+  line-height: 1em;
+  font-size: 1rem;
+  transition: color 0.5s;
+}
+
+h1 a:hover {
+  color: white;
+}

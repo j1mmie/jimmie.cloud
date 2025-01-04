@@ -1,0 +1,85 @@
+/*
+
+Dark mode color scheme:
+
+
+Amaranth pink:  #ea9caf
+Pink highlight: #eccddc
+Space cadet:    #252339
+Vista Blue:     #80a1d4
+Tiffany Blue:   #75c9c8
+Alabaster:      #f1f2eb
+
+https://coolors.co/ea9caf-252339-80a1d4-75c9c8-f1f2eb
+
+Inspiration: https://github.com/yuhonas/zsh-ansimotd
+
+*/
+
+html {
+  font-size: 20px;
+  /* font-family: 'input-mono', monospace; */
+  font-family: 'input-mono', serif;
+  font-style: normal;
+  background: #252339;
+  color: #f1f2eb;
+  line-height: 24px;
+}
+
+h1, h2, h3, h4, h5 {
+  color: #ea9caf;
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3, h4, h5 {
+  font-size: 1rem;
+}
+
+h2 {
+  margin: 0;
+  line-height: 2rem;
+}
+
+h3, h4, h5 {
+  margin-top: 1rem;
+}
+
+a {
+  color: #75C9C8;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  transition: color 0.15s;
+}
+
+a:hover {
+  color: #68d9d7
+}
+
+
+hr {
+  border: 0;
+  color: #f1f2eb;
+  margin: 0;
+}
+
+hr::after {
+  content: '------------------------------------------------------------------------------------';
+  display: block;
+  text-align: left;
+  font-size: 1em;
+  height: 1rem;
+  line-height: 1rem;
+  font-weight: normal;
+  margin-top: 1px;
+  margin-bottom: -1px;
+}
+
+p {
+  margin: 1rem 0;
+}
