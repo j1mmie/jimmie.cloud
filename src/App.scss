@@ -1,0 +1,30 @@
+@use './style/Colors.scss';
+@use './style/Sizes.scss';
+
+.main-content {
+  margin: Sizes.lh(2) auto;
+  max-width: 80ch;
+  padding: Sizes.lh(3) 3ch;
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+  border: 1ch solid #02001033;
+
+  box-shadow: 0 0 3ch #00000033;
+  background: Colors.$color-dark-blue;
+}
+
+.main-content > * {
+  position: relative;
+  z-index: 10;
+}
+
+$grid-color: rgba(255, 40, 255, 0.9);
+
+.grid {
+  background-image:
+    linear-gradient(to right,  transparent calc(1ch         - 1px), $grid-color 1px), /* Vertical lines */
+    linear-gradient(to bottom, transparent calc(Sizes.lh(1) - 1px), $grid-color 1px); /* Horizontal lines */
+  background-size: 1ch Sizes.lh(1); /* Grid cell size */
+  background-repeat: repeat;
+}

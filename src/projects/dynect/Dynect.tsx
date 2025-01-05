@@ -1,9 +1,11 @@
-import { dynectProjectDef } from './DynectProjectDef'
+import ProjectHeader from '../../projects-core/project/header/ProjectHeader'
+import Project from '../../projects-core/project/Project'
 
 export function Dynect() {
   return (
-    <div>
-      <h1>{dynectProjectDef.title}</h1>
-    </div>
+    <Project>
+      <ProjectHeader>Dynect</ProjectHeader>
+      <p>Enterprise DNS management UI</p>
+    </Project>
   )
 }

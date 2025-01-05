@@ -1,13 +1,12 @@
 import ProjectHeader from '../../projects-core/project/header/ProjectHeader'
 import ProjectSubheader from '../../projects-core/project/sub-header/ProjectSubheader'
 import YouTubeIFrame from '../../../lib/components/YouTubeIFrame'
-import '../../projects-core/project/Project.css'
-import { dynProjectDef } from './DynProjectDef'
+import Project from '../../projects-core/project/Project'
 
 export function Dyn() {
   return (
-    <div>
-      <ProjectHeader>{dynProjectDef.title}</ProjectHeader>
+    <Project>
+      <ProjectHeader>Dyn Updater</ProjectHeader>
       <p>(Formerly known as DynDNS updater)</p>
       <p>
         Windows desktop software that automatically updates host records as a
@@ -28,6 +27,6 @@ export function Dyn() {
       </p>
 
       <YouTubeIFrame videoId='Np0VeQJwlI0' startTime='4m55s' title='DynDNS Updater Demo' />
-    </div>
+    </Project>
   )
 }

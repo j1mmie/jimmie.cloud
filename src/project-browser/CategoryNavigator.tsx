@@ -1,5 +1,5 @@
 import { MouseEvent, useState } from 'react'
-import './CategoryNavigator.css'
+import './CategoryNavigator.scss'
 import { ProjectCategoryDef } from '../projects-core/category/ProjectCategoryDef'
 import ProjectNavigator from './ProjectNavigator'
 

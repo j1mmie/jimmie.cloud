@@ -1,0 +1,21 @@
+@use '../style/Sizes.scss';
+@use '../style/Colors.scss';
+@use '../style/ColorAssignments.scss';
+
+.category-navigator-menu {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.category-navigator-menu li {
+  margin: 0 2ch 0 0;
+}
+
+.category-navigator-menu a.selected {
+  background: ColorAssignments.$color-link;
+  color: Colors.$color-dark-blue;
+  // color: #00eeff;
+}

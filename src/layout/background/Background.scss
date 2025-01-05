@@ -1,0 +1,19 @@
+@use '../../style/Sizes.scss';
+
+.background {
+  display: block;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+}
+
+
+.background-lines {
+  color: rgba(255, 255, 255, .08);
+  overflow: hidden;
+  width: 100%;
+  white-space: nowrap;
+}

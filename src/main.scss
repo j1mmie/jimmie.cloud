@@ -1,0 +1,104 @@
+@use './style/Colors.scss';
+@use './style/ColorAssignments.scss';
+@use './style/Sizes.scss';
+
+@font-face {
+  font-family: 'BlockFont';
+  src: url('./assets/BlockFont.woff') format('woff');
+}
+
+
+html {
+  font-size: Sizes.$font-size;
+  font-family: 'input-mono', 'BlockFont', monospace;
+  font-style: normal;
+  background: #112;
+  color: Colors.$color-white;
+  line-height: Sizes.$line-height;
+  min-height: 100%;
+}
+
+
+h1, h2, h3, h4, h5 {
+  color: ColorAssignments.$color-header;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 3rem;
+  line-height: Sizes.lh(3);
+}
+
+h2 {
+  font-size: 2rem;
+  line-height: Sizes.lh(2);
+}
+
+h3, h4, h5 {
+  font-size: 1rem;
+  line-height: Sizes.lh(1);
+}
+
+h3, h4, h5 {
+  margin-top: Sizes.lh(1);
+}
+
+h4 {
+  font-weight: normal;
+}
+
+h5 {
+  color: ColorAssignments.$color-text;
+  font-weight: bold;
+}
+
+a {
+  color: ColorAssignments.$color-link;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 2px;
+  // transition: color 0.15s;
+}
+
+a:hover {
+  background: ColorAssignments.$color-link;
+  color: Colors.$color-dark-blue;
+
+}
+
+
+hr {
+  border: 0;
+  color: ColorAssignments.$color-text;
+  margin: 0;
+}
+
+// More at https://emojicombos.com/dividers
+hr::after {
+  content: '--------------------------------------------------------------------------------';
+  display: block;
+  text-align: left;
+  font-size: 1rem;
+  height: Sizes.lh(1);
+  line-height: Sizes.lh(1);
+  font-weight: normal;
+  margin-top: 1px;
+  margin-bottom: -1px;
+}
+
+p {
+  margin: 0 0 Sizes.lh(1) 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: '• ';
+}
+
+li {
+  margin: 0;
+  padding: 0;
+  margin-left: 3ch;
+}

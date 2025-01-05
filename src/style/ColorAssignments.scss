@@ -1,0 +1,6 @@
+@use './Colors.scss';
+
+$color-header:     Colors.$color-pink;
+$color-link:       Colors.$color-teal;
+$color-text:       Colors.$color-white;
+$color-link-hover: Colors.$color-teal-highlight;

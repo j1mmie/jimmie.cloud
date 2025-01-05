@@ -1,12 +1,12 @@
 import ProjectHeader from '../../projects-core/project/header/ProjectHeader'
 import ProjectSubheader from '../../projects-core/project/sub-header/ProjectSubheader'
 import YouTubeIFrame from '../../../lib/components/YouTubeIFrame'
-import { goatProjectDef } from './GoatProjectDef'
+import Project from '../../projects-core/project/Project'
 
-export default function Goat() {
+export function Goat() {
   return (
-    <div>
-      <ProjectHeader>{goatProjectDef.title}</ProjectHeader>
+    <Project>
+      <ProjectHeader>Ready Set Goat!</ProjectHeader>
       <p>
         High-score chaser, one-button arcade game for Android and iOS.
         Developed as part of the One-Button Game Jam on itch.io
@@ -26,6 +26,6 @@ export default function Goat() {
       <ProjectSubheader>Technologies Used:</ProjectSubheader>
       <p><strong>Client:</strong>Unity, C#</p>
       <p><strong>Server:</strong>Azure Playfab, Javascript</p>
-    </div>
+    </Project>
   )
 }

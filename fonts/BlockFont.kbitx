@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE kbits PUBLIC "-//Kreative//DTD BitsNPicasBitmap 1.0//EN" "http://www.kreativekorp.com/dtd/kbitx.dtd">
+<kbits>
+<prop id="emAscent" value="22"/>
+<prop id="emDescent" value="0"/>
+<prop id="lineAscent" value="22"/>
+<prop id="lineDescent" value="0"/>
+<prop id="lineGap" value="0"/>
+<prop id="xHeight" value="0"/>
+<prop id="capHeight" value="0"/>
+<name id="1" value="BlockFont"/>
+<name id="2" value="Regular"/>
+<name id="3" value="Subpixel: BlockFont: 2025"/>
+<name id="4" value="BlockFont"/>
+<name id="5" value="Version 1.0"/>
+<name id="6" value="BlockFont"/>
+<name id="8" value="Subpixel"/>
+<name id="11" value="http://www.kreativekorp.com/software/bitsnpicas/"/>
+<g u="32" x="0" y="0" w="14" d="AAA"/>
+<g u="9600" x="0" y="24" w="14" d="DQ5lVg"/>
+<g u="9604" x="0" y="12" w="14" d="Dg5mRA"/>
+<g u="9608" x="0" y="24" w="14" d="Gg5rTA"/>
+<g u="9612" x="0" y="24" w="14" d="GgdlVg"/>
+<g u="9616" x="7" y="24" w="14" d="GgdlVg"/>
+</kbits>

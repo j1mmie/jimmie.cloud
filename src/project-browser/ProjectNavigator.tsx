@@ -1,5 +1,5 @@
 import { MouseEvent, useState } from 'react'
-import './ProjectNavigator.css'
+import './ProjectNavigator.scss'
 import { ProjectCategoryDef } from '../projects-core/category/ProjectCategoryDef'
 
 type ProjectNavigatorProps = {
@@ -15,7 +15,7 @@ function ProjectNavigator(props:ProjectNavigatorProps) {
 
   const projectDefs = props.categoryDef.projectDefs
 
-  const projectMenuItems = projectDefs.map(projectDef => {
+  const projectMenuItems = projectDefs.map((projectDef, index) => {
     const selected = projectDef.id === currentSelection
 
     const onSelectionToggle = (evt:MouseEvent) => {
@@ -23,8 +23,12 @@ function ProjectNavigator(props:ProjectNavigatorProps) {
       evt.preventDefault()
     }
 
+    const treeChar = index === projectDefs.length - 1 ? '└' : '├'
+    const treeLineChar = index < projectDefs.length - 1 ? '│' : ''
+
     return (
       <li key={projectDef.id}>
+        {treeChar}&nbsp;
         <a
           href="#"
           onClick={onSelectionToggle}
@@ -32,6 +36,8 @@ function ProjectNavigator(props:ProjectNavigatorProps) {
         >
           {projectDef.title}
         </a>
+        &nbsp;- {projectDef.shortDesc}<br />
+        {treeLineChar}
       </li>
     )
   })
@@ -43,7 +49,6 @@ function ProjectNavigator(props:ProjectNavigatorProps) {
 
   return (
     <div>
-      <h3>{props.categoryDef.title}</h3>
       <div className="project-navigator">
         <ul className="project-navigator-menu">
           {projectMenuItems}

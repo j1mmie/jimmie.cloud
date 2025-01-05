@@ -1,11 +1,11 @@
 import ProjectHeader from '../../projects-core/project/header/ProjectHeader'
+import Project from '../../projects-core/project/Project'
 import ProjectSubheader from '../../projects-core/project/sub-header/ProjectSubheader'
-import { slipstreamProjectDef } from './SlipstreamProjectDef'
 
 export function Slipstream() {
   return (
-    <div>
-      <ProjectHeader>{slipstreamProjectDef.title}</ProjectHeader>
+    <Project>
+      <ProjectHeader>Slipstream: Rogue Space</ProjectHeader>
       <p>
         A 120 player, co-operative strategy game. Designed for streamers to play with their audience.
         Available crossplay on Steam (Windows and Mac), iOS, and Android.
@@ -16,18 +16,18 @@ export function Slipstream() {
       <ProjectSubheader>Role:</ProjectSubheader>
       <p>Founder, Lead Developer. Early art.</p>
 
-      <p>
-        Developed original concept for game.
-        Created initial style guide or artwork.
-        Developed performant client that runs well even on older Android devices.
-        Developed multiplayer server architecture from scratch to support 120 CCU efficiently.
-        Developed APIs for persistence and player progression, inculding
-        experience points, leveling, rewards, purchases, gifting, etc.
-      </p>
+      <ul>
+        <li>Developed original concept for game.</li>
+        <li>Created initial style guide or artwork.</li>
+        <li>Developed performant client that runs well even on older Android devices.</li>
+        <li>Developed multiplayer server architecture from scratch to support 120 CCU efficiently.</li>
+        <li>Developed APIs for persistence and player progression, including
+        experience points, leveling, rewards, purchases, gifting, etc.</li>
+      </ul>
 
       <ProjectSubheader>Technologies Used:</ProjectSubheader>
       <p><strong>Client: </strong>Unity, C#</p>
       <p><strong>Server: </strong>Typescript, Google Cloud Platform, Kubernetes, Agones, AWS GameLift</p>
-    </div>
+    </Project>
   )
 }

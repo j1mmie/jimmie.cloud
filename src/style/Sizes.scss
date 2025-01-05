@@ -1,0 +1,6 @@
+$font-size: 20px;
+$line-height: 24px;
+
+@function lh($size) {
+  @return $size * $line-height;
+}

@@ -1,3 +1,5 @@
+@use '../../style/Sizes.scss';
+
 h1 {
   /* background: linear-gradient(to bottom, #ea9caf, #ea9caf);
   background-clip: text;
@@ -6,12 +8,12 @@ h1 {
   color: #ea9caf;
   width: 100%;
   display: block;
-  margin: 1em 0 3em 0;
-  /* simulate a pre tag */
+  margin: 0 0 Sizes.lh(2) 0;
   white-space: pre;
   font-size: 1rem;
-  line-height: 1em;
+  line-height: Sizes.lh(1);
   text-align: left;
+  text-shadow: 1ch Sizes.lh(.5) 0 #151020;
 }
 
 h1 a, h1 a:active, h1 a:visited {
@@ -19,11 +21,10 @@ h1 a, h1 a:active, h1 a:visited {
   text-decoration: none;
   width: 100%;
   display: block;
-  line-height: 1em;
+  line-height: Sizes.lh(1);
   font-size: 1rem;
-  transition: color 0.5s;
 }
 
 h1 a:hover {
-  color: white;
+  background: none;
 }

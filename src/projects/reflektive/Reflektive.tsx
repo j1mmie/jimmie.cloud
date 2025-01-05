@@ -1,11 +1,11 @@
 import ProjectHeader from '../../projects-core/project/header/ProjectHeader'
+import Project from '../../projects-core/project/Project'
 import ProjectSubheader from '../../projects-core/project/sub-header/ProjectSubheader'
-import { reflektiveProjectDef } from './ReflektiveProjectDef'
 
 export function Reflektive() {
   return (
-    <div>
-      <ProjectHeader>{reflektiveProjectDef.title}</ProjectHeader>
+    <Project>
+      <ProjectHeader>Reflektive</ProjectHeader>
       <p>SaaS performance management software</p>
 
       <ProjectHeader>Role:</ProjectHeader>
@@ -29,6 +29,6 @@ export function Reflektive() {
       <p><strong>Gmail Client:</strong> Javascript, React</p>
       <p><strong>Outlook Mac:</strong> Objective-C</p>
       <p><strong>Outlook Windows:</strong> C#, .NET</p>
-    </div>
+    </Project>
   )
 }

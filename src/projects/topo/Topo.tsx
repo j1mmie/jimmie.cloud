@@ -1,11 +1,11 @@
 import ProjectHeader from '../../projects-core/project/header/ProjectHeader'
+import Project from '../../projects-core/project/Project'
 import ProjectSubheader from '../../projects-core/project/sub-header/ProjectSubheader'
-import { topoProjectDef } from './TopoProjectDef'
 
 export function Topo() {
   return (
-    <div>
-      <ProjectHeader>{topoProjectDef.title}</ProjectHeader>
+    <Project>
+      <ProjectHeader>Topography Health Patient Search</ProjectHeader>
       <p>ETL and UI for patient medical data.</p>
 
       <ProjectSubheader>Role:</ProjectSubheader>
@@ -19,6 +19,6 @@ export function Topo() {
 
       <ProjectSubheader>Technologies Used:</ProjectSubheader>
       <p>Rails, Typescript, Mongo, Docker</p>
-    </div>
+    </Project>
   )
 }

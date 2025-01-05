@@ -1,11 +1,11 @@
 import ProjectHeader from '../../projects-core/project/header/ProjectHeader'
+import Project from '../../projects-core/project/Project'
 import ProjectSubheader from '../../projects-core/project/sub-header/ProjectSubheader'
-import { surfProjectDef } from './SurfProjectDef'
 
 export function Surf() {
   return (
-    <div>
-      <ProjectHeader>{surfProjectDef.title}</ProjectHeader>
+    <Project>
+      <ProjectHeader>Untitled Procedural "Surf" Demo</ProjectHeader>
       <p>Developed as part of the Void Game Jam on itch.io</p>
 
       <ProjectSubheader>Role:</ProjectSubheader>
@@ -13,6 +13,6 @@ export function Surf() {
 
       <ProjectSubheader>Technologies Used</ProjectSubheader>
       <p>Unity, C#</p>
-    </div>
+    </Project>
   )
 }

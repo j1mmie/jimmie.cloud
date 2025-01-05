@@ -1,13 +1,15 @@
-import React from 'react'
-import './Project.css'
+import React, { ReactNode } from 'react'
+import './Project.scss'
+import { SecretCode } from '../../layout/secret-code/SecretCode'
 
 export interface ProjectProps {
-  children:string
+  children:ReactNode[] | ReactNode
 }
 
 const Project:React.FC<ProjectProps> = ({children}) => {
   return (
-    <div className="project">
+    <div>
+      <SecretCode width={80} />
       {children}
     </div>
   )

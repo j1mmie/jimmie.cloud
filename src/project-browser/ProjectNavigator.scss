@@ -1,0 +1,28 @@
+@use '../style/Sizes.scss';
+@use '../style/Colors.scss';
+@use '../style/ColorAssignments.scss';
+
+/* horizontal flex box. each child takes up exactly the width it requirres*/
+.project-navigator {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: start;
+  margin: Sizes.lh(1) 0 Sizes.lh(1) 1ch;
+  list-style: none;
+}
+
+.project-navigator-menu {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.project-navigator-menu li {
+  margin: 0;
+}
+
+.project-navigator-menu a.selected {
+  background: ColorAssignments.$color-link;
+  color: Colors.$color-dark-blue;
+  // color: #00eeff;
+}

@@ -1,11 +1,11 @@
 import ProjectHeader from '../../projects-core/project/header/ProjectHeader'
+import Project from '../../projects-core/project/Project'
 import ProjectSubheader from '../../projects-core/project/sub-header/ProjectSubheader'
-import { nfinityProjectDef } from './NfinityProjectDef'
 
 export function Nfinity() {
   return (
-    <div>
-      <ProjectHeader>{nfinityProjectDef.title}</ProjectHeader>
+    <Project>
+      <ProjectHeader>Nfinity</ProjectHeader>
       <p>(Previously known as Lazy3d)</p>
       <p>
         3d, procedurally generated NFT browser. Generates an art gallery
@@ -18,6 +18,6 @@ export function Nfinity() {
 
       <ProjectSubheader>Technologies Used:</ProjectSubheader>
       <p>Typescript, Ethers.js, Ethereum, OpenSea,  Cloudflare</p>
-    </div>
+    </Project>
   )
 }
