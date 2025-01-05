@@ -1,6 +1,6 @@
 import ProjectHeader from '../../projects-core/project/header/ProjectHeader'
 import ProjectSubheader from '../../projects-core/project/sub-header/ProjectSubheader'
-import YouTubeIFrame from '../../../lib/components/YouTubeIFrame'
+import YouTubeIFrame from '../../../../../lib/components/YouTubeIFrame'
 import Project from '../../projects-core/project/Project'
 
 export function Dyn() {

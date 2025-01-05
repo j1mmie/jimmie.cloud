@@ -1,19 +1,15 @@
+import { Hr } from '../../components/atoms/hr/Hr'
+import { AnsiArt } from './ansi-art/AnsiArt'
+import { Background } from './background/Background'
 import './Header.scss'
 
 export function Header() {
   return (
     <div>
-      <h1><a href="/">
-&nbsp;          ▄█  ▄█    ▄▄▄▄███▄▄▄▄     ▄▄▄▄███▄▄▄▄    ▄█     ▄████████ <br />
-&nbsp;         ███ ███  ▄██▀▀▀███▀▀▀██▄ ▄██▀▀▀███▀▀▀██▄ ███    ███    ███ <br />
-&nbsp;         ███ ███▌ ███   ███   ███ ███   ███   ███ ███▌   ███    █▀  <br />
-&nbsp;         ███ ███▌ ███   ███   ███ ███   ███   ███ ███▌  ▄███▄▄▄     <br />
-&nbsp;         ███ ███▌ ███   ███   ███ ███   ███   ███ ███▌ ▀▀███▀▀▀     <br />
-&nbsp;         ███ ███  ███   ███   ███ ███   ███   ███ ███    ███    █▄  <br />
-&nbsp;         ███ ███  ███   ███   ███ ███   ███   ███ ███    ███    ███ <br />
-&nbsp;     █▄ ▄███ █▀    ▀█   ███   █▀   ▀█   ███   █▀  █▀     ██████████ <br />
-&nbsp;     ▀▀▀▀▀▀                                                         <br />
-</a></h1>
+      <Background />
+      <AnsiArt />
+      <Hr width={80} />
+      <br />
     </div>
   )
 }

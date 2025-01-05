@@ -1,7 +1,7 @@
 import backgroundText from './Background.txt?raw'
 import './Background.scss'
 import { ReactNode } from 'react'
-import { Maths } from '../../../lib/Maths'
+import { Maths } from '../../../../lib/Maths'
 
 const startOpacity      = 1
 const endOpacity        = 0

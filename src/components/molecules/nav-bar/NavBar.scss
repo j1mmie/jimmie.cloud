@@ -1,0 +1,21 @@
+@use '../../../style/Sizes.scss';
+@use '../../../style/Colors.scss';
+@use '../../../style/ColorAssignments.scss';
+
+.nav-bar-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-bar-list li {
+  margin: 0;
+}
+
+.nav-bar-list a.selected {
+  background: ColorAssignments.$color-link;
+  color: Colors.$color-dark-blue;
+  // color: #00eeff;
+}

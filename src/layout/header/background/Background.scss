@@ -1,12 +1,12 @@
-@use '../../style/Sizes.scss';
+@use '../../../style/Sizes.scss';
 
 .background {
   display: block;
   position: absolute;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  right: 0;
+  z-index: -1;
+  top: 0 - Sizes.lh(3);
+  left: -3ch;
+  right: -3ch;
   overflow: hidden;
 }
 

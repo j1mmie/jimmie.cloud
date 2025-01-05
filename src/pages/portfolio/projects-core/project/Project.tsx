@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react'
 import './Project.scss'
-import { SecretCode } from '../../layout/secret-code/SecretCode'
+import { Hr } from '../../../../components/atoms/hr/Hr'
 
 export interface ProjectProps {
   children:ReactNode[] | ReactNode
@@ -9,7 +9,7 @@ export interface ProjectProps {
 const Project:React.FC<ProjectProps> = ({children}) => {
   return (
     <div>
-      <SecretCode width={80} />
+      <Hr width={80} />
       {children}
     </div>
   )

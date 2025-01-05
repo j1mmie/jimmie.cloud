@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import './SecretCode.scss'
+import './Hr.scss'
 
 const alphabet = '-_'
 
@@ -11,7 +11,7 @@ function getRandomChars(length:number) {
   return result
 }
 
-type SecretCodeProps = {
+type HrProps = {
   width:number,
   animationSpeed?:number
 }
@@ -21,7 +21,7 @@ type LineOfText = {
   text:string
 }
 
-export function SecretCode(props:SecretCodeProps) {
+export function Hr(props:HrProps) {
   const initialLines:LineOfText[] = []
   const [ lines, setLines ] = useState(initialLines)
 
@@ -63,7 +63,7 @@ export function SecretCode(props:SecretCodeProps) {
 
 
   return (
-    <div className="secret-code">
+    <div className="hr">
       {lineEls}
     </div>
   )

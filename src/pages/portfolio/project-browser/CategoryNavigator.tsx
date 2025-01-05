@@ -1,7 +1,8 @@
-import { MouseEvent, useState } from 'react'
+import { useState } from 'react'
 import './CategoryNavigator.scss'
 import { ProjectCategoryDef } from '../projects-core/category/ProjectCategoryDef'
 import ProjectNavigator from './ProjectNavigator'
+import { NavBar } from '../../../components/molecules/nav-bar/NavBar'
 
 type CategoryNavigatorProps = {
   projectCategoryDefs:ProjectCategoryDef[]
@@ -12,36 +13,16 @@ function CategoryNavigator(props:CategoryNavigatorProps) {
 
   const categoryDefs = props.projectCategoryDefs
 
-  const categoryMenuItems = categoryDefs.map(categoryDef => {
-    const selected = categoryDef.id === currentSelection
-
-    const onSelectionToggle = (evt:MouseEvent) => {
-      setCurrentSelection(categoryDef.id)
-      evt.preventDefault()
-    }
-
-    return (
-      <li key={categoryDef.id}>
-        <a
-          href="#"
-          onClick={onSelectionToggle}
-          className={selected ? 'selected' : ''}
-        >
-          {categoryDef.title}
-        </a>
-      </li>
-    )
-  })
+  const onSelectionChange = (categoryId:string) => {
+    setCurrentSelection(categoryId)
+  }
 
   const selectedCategory = categoryDefs.find(categoryDef => categoryDef.id === currentSelection)
 
   return (
     <div>
-      <div className="category-navigator">
-        <ul className="category-navigator-menu">
-          {categoryMenuItems}
-        </ul>
-      </div>
+      <NavBar spacing={2} items={categoryDefs} onSelectionChange={onSelectionChange} />
+
       <div className="category-navigator-content">
         <ProjectNavigator categoryDef={selectedCategory} />
       </div>

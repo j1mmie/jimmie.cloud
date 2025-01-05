@@ -1,6 +1,6 @@
-@use '../style/Sizes.scss';
-@use '../style/Colors.scss';
-@use '../style/ColorAssignments.scss';
+@use '../../../style/Sizes.scss';
+@use '../../../style/Colors.scss';
+@use '../../../style/ColorAssignments.scss';
 
 /* horizontal flex box. each child takes up exactly the width it requirres*/
 .project-navigator {
