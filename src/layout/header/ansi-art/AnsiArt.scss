@@ -19,11 +19,14 @@ $color-dark-bottom: #3e6297; // blue
 // $color-dark-bottom: #327a79; // green
 
 
-$color-lite-top: #d68297;
-$color-lite-bottom: Colors.$color-pink;
+// $color-lite-top: #d68297;
+$color-lite-top: Colors.$color-pink;
+$color-lite-bottom: Colors.$color-orange;
 
-@for $i from 0 through 12 {
-  $factor: calc($i / 12);
+$gradient-size: 24;
+
+@for $i from 0 through $gradient-size {
+  $factor: calc($i / $gradient-size);
   $current-lite: color.mix($color-lite-bottom, $color-lite-top, calc($factor * 100%));
   $current-dark: color.mix($color-dark-bottom, $color-dark-top, calc($factor * 100%));
 

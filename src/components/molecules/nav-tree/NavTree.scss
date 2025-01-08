@@ -1,0 +1,40 @@
+@use '../../../style/Sizes.scss';
+@use '../../../style/Colors.scss';
+@use '../../../style/ColorAssignments.scss';
+
+.nav-tree {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: start;
+  margin: Sizes.lh(1) 0 Sizes.lh(1) 1ch;
+  list-style: none;
+}
+
+.nav-tree-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-tree-list li {
+  margin: 0;
+}
+
+.nav-tree-list a.selected {
+  background: ColorAssignments.$color-link;
+  color: Colors.$color-dark-blue;
+  // color: #00eeff;
+}
+
+.nav-tree-list {
+  overflow: hidden;
+}
+
+.nav-tree-list.closed {
+  max-height: 0;
+}
+
+.nav-tree-list.opened {
+  transition: max-height 0.5s linear;
+  max-height: 100vh;
+}

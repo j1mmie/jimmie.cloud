@@ -7,7 +7,6 @@
   src: url('./assets/BlockFont.woff') format('woff');
 }
 
-
 html {
   font-size: Sizes.$font-size;
   font-family: 'input-mono', 'BlockFont', monospace;
@@ -16,6 +15,13 @@ html {
   color: Colors.$color-white;
   line-height: Sizes.$line-height;
   min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
 }
 
 
@@ -44,13 +50,17 @@ h3, h4, h5 {
   margin-top: Sizes.lh(1);
 }
 
+h3 {
+  font-weight: bold;
+}
+
 h4 {
   font-weight: normal;
+  color: Colors.$color-orange;
 }
 
 h5 {
-  color: ColorAssignments.$color-text;
-  font-weight: bold;
+  font-weight: normal;
 }
 
 a {
@@ -97,8 +107,80 @@ ul {
   list-style: '• ';
 }
 
+ul ul {
+  list-style: '◦ ';
+  margin: 0 0 Sizes.lh(1) 0;
+}
+
 li {
   margin: 0;
   padding: 0;
   margin-left: 3ch;
+  margin-top: Sizes.lh(1);
+}
+
+
+ul ul li {
+  margin-top: 0;
+}
+
+code {
+  font-family: 'input-mono', 'BlockFont', monospace;
+  font-size: 1rem;
+  margin-left: -4px;
+  // padding: Sizes.lh(.25) 1ch;
+  padding: 1px 4px;
+  border-radius: 0.25ch;
+  background: rgba(Colors.$color-green, 0.2);
+  outline: 1px solid rgba(Colors.$color-green, 0.5);
+  outline-offset: -1px;
+}
+
+pre code {
+  display: block;
+  font-family: 'input-mono', 'BlockFont', monospace;
+  font-size: 1rem;
+  border-radius: 0.25ch;
+  background: rgba(Colors.$color-green, 0.2);
+  outline: 1px solid rgba(Colors.$color-green, 0.5);
+  outline-offset: -1px;
+  padding: Sizes.lh(1) 2ch;
+  margin: 0;
+  overflow-x: auto;
+  white-space: pre;
+}
+
+table {
+  padding: 0;
+  line-height: Sizes.lh(1);
+  margin: 0;
+  border-collapse: collapse;
+}
+
+th {
+  padding: 0;
+  margin: 0;
+  text-align: left;
+  font-weight: bold;
+  line-height: Sizes.lh(1);
+}
+
+td {
+  padding: 0;
+  margin: 0;
+  line-height: Sizes.lh(1);
+}
+
+th + th, td + td, th + td {
+  padding-left: 1ch;
+}
+
+table.airy {
+  border-collapse: separate;
+  border-spacing: 1ch Sizes.lh(1);
+  margin-bottom: 0 - Sizes.lh(1);
+}
+
+figure {
+  text-align: center;
 }

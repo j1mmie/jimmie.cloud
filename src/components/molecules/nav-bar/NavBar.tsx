@@ -1,9 +1,10 @@
-import { CSSProperties, MouseEvent, useState } from 'react'
+import { CSSProperties } from 'react'
 import './NavBar.scss'
+import { NavLink } from 'react-router-dom'
 
-type NavBarItem = {
-  id:string
+export type NavBarItem = {
   title:string
+  to:string
 }
 
 type NavBarProps = {
@@ -11,56 +12,46 @@ type NavBarProps = {
   width?:number
   spacing?:number
   center?:boolean
-  onSelectionChange?:(id:string) => void
-  initialSelection?:string
+}
+
+function getTotalTextWidth(items:NavBarItem[], spacing:number) {
+  return items.reduce((acc, item) => {
+    return acc + item.title.length
+  }, 0) + (spacing * items.length - 1)
+}
+
+function getStyleIfCentering(props:NavBarProps) {
+  if (!props.width || !props.center) return {}
+
+  const spacing = props.spacing ?? 1
+  const totalTextWidth = getTotalTextWidth(props.items, spacing)
+  const padding = Math.floor((props.width - totalTextWidth) / 2)
+
+  return { paddingLeft: `${padding}ch` }
 }
 
 export function NavBar(props:NavBarProps) {
-  const [currentSelection, setCurrentSelection] = useState(props.initialSelection ?? '')
-
   const items = props.items
 
   const listEls = items.map(item => {
-    const selected = item.id === currentSelection
-
-    const onSelectionToggle = (evt:MouseEvent) => {
-      setCurrentSelection(item.id)
-      evt.preventDefault()
-
-      if (props.onSelectionChange) {
-        props.onSelectionChange(item.id)
-      }
-    }
-
     const style:CSSProperties = {
       marginRight: props.spacing ? `${props.spacing}ch` : undefined
     }
 
     return (
-      <li key={item.id}>
-        <a
-          href="#"
-          onClick={onSelectionToggle}
-          className={selected ? 'selected' : ''}
+      <li key={item.to}>
+        <NavLink
+          to={item.to}
+          className={({ isActive }) => (isActive ? "selected" : "")}
           style={style}
         >
           {item.title}
-        </a>
+        </NavLink>
       </li>
     )
   })
 
-  const style:CSSProperties = {}
-  if (props.width && props.center) {
-    const spacing = props.spacing ?? 1
-
-    const totalTextWidth = items.reduce((acc, item) => {
-      return acc + item.title.length
-    }, 0) + (spacing * items.length - 1)
-
-    const padding = Math.floor((props.width - totalTextWidth) / 2)
-    style.paddingLeft = `${padding}ch`
-  }
+  const style = getStyleIfCentering(props)
 
   return (
     <div className="nav-bar" style={style}>

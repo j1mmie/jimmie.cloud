@@ -1,0 +1,15 @@
+.terminalize {
+  overflow: hidden;
+  border: 2px solid #0f0;
+  // outline-offset: -1px;
+  border-style: inset;
+
+  &.animated {
+    transition: max-height 0.5s linear;
+  }
+}
+
+
+// .terminalize-inner {
+//   overflow: hidden;
+// }
