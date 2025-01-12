@@ -29,8 +29,8 @@ $debug: false;
   }
 
   h2 {
-    font-size: var(--font-size);
-    text-transform: uppercase;
+    // font-size: var(--font-size);
+    // text-transform: uppercase;
   }
 
   .main-content {
@@ -111,6 +111,19 @@ $debug: false;
   .nav-bar {
     .nav-bar-list {
       flex-direction: column;
+
+      li {
+        // margin-bottom: Sizes.lh(1);
+
+        a {
+          padding: Sizes.lh(1) 1ch;
+          width: 100%;
+        }
+      }
+
+      li:last-child {
+        margin-bottom: 0;
+      }
     }
   }
 
