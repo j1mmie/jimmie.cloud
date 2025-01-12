@@ -7,7 +7,8 @@ import { NavBar} from './components/molecules/nav-bar/NavBar'
 import { Grid } from './debug/Grid'
 import { routes } from './Routes'
 import { Terminalize } from './terminalize/Terminalize'
-
+import { Background } from './layout/header/background/Background'
+import { VerticalExpander } from './terminalize/VerticalExpander'
 
 function App() {
   const routeElements = routes.map(route => {
@@ -17,19 +18,27 @@ function App() {
   })
 
   return (
-    <Terminalize speedInLinesPerSecond={100}>
+    <VerticalExpander>
       <Grid className="main-content">
-        <Header />
+        <Background />
+        <div className="even-ch-width">
 
-        <NavBar width={80} center={true} spacing={2} items={routes} />
-        <br />
+          <Terminalize
+            lineHeightPixels={24}
+            linesPerSecond={60}
+          >
+            <Header />
 
-        <Routes>
-          {routeElements}
-        </Routes>
-        <Footer />
+            <NavBar width={80} center={true} spacing={2} items={routes} />
+
+            <Routes>
+              {routeElements}
+            </Routes>
+            <Footer />
+          </Terminalize>
+        </div>
       </Grid>
-    </Terminalize>
+    </VerticalExpander>
   )
 }
 

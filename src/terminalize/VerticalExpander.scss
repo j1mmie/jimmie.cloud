@@ -1,0 +1,14 @@
+$debug: false;
+
+.vertical-expander, .vertical-expander-inner {
+  width: 100%;
+  overflow: hidden;
+}
+
+
+@if $debug {
+  .vertical-expander {
+    outline: 2px solid yellow;
+    outline-offset: -2px;
+  }
+}

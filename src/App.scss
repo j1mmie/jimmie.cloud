@@ -2,19 +2,49 @@
 @use './style/Sizes.scss';
 
 .terminalize {
-  max-width: 86ch;
+  max-width: 80ch;
   margin: Sizes.lh(2) auto;
+
+  .cursor {
+    height: Sizes.lh(1);
+
+    .char {
+      height: Sizes.lh(1);
+    }
+
+    .blocker, .blocker-below {
+      background-color: Colors.$color-dark-blue;
+    }
+
+    .blocker-below {
+      top: Sizes.lh(1);
+    }
+  }
 }
 
 .main-content {
   max-width: 80ch;
-  padding: Sizes.lh(3) 3ch;
+  padding: 0 3ch;
+
+  min-height: Sizes.lh(30);
+  margin: Sizes.lh(2) auto;
   position: relative;
-  overflow: hidden;
+
   z-index: 0;
+
   border: 1ch solid #02001033;
   box-shadow: 0 0 3ch #00000033;
   background: Colors.$color-dark-blue;
+}
+
+.even-ch-width {
+  position: relative;
+  width: auto;
+  width: calc-size(auto, round(size, 1ch));
+  position: relative;
+
+  overflow: hidden;
+  z-index: 1;
 }
 
 .main-content > * {
@@ -24,10 +54,17 @@
 
 $grid-color: rgba(255, 40, 255, 0.9);
 
-.grid {
+.debug-grid {
   background-image:
-    linear-gradient(to right,  transparent calc(1ch         - 1px), $grid-color 1px), /* Vertical lines */
-    linear-gradient(to bottom, transparent calc(Sizes.lh(1) - 1px), $grid-color 1px); /* Horizontal lines */
-  background-size: 1ch Sizes.lh(1); /* Grid cell size */
-  background-repeat: repeat;
+    repeating-linear-gradient(
+      $grid-color 0 1px,
+      transparent 1px 100%
+    ),
+    repeating-linear-gradient(
+      90deg,
+      $grid-color 0 1px,
+      transparent 1px 100%
+    );
+
+  background-size: 1ch Sizes.lh(1);
 }

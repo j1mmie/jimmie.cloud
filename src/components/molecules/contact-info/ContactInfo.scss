@@ -1,0 +1,20 @@
+.contact-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+
+  li {
+    margin: 0;
+    list-style: none;
+    padding-right: 1ch;
+    white-space: nowrap;
+  }
+
+  li:after {
+    content: ' | ';
+  }
+
+  li:last-child:after {
+    content: '';
+  }
+}

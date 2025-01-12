@@ -1,12 +1,12 @@
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 import './Terminalize.scss'
 import { IntervalManager } from './IntervalManager'
-import { TerminalizeHelpers as Helpers } from './TerminalizeHelpers'
+import { Helpers as Helpers } from './Helpers'
+import { TerminalizeProps } from './TerminalizeProps'
+import { Animations } from './Animations'
 
-
-const lineHeight = 24
 const startingLinesToRevealPerIteration = 1
-const iterationsBetweenLineRevealCountChanges = 10
+const iterationsBetweenLineRevealCountChanges = 24
 const linesToRevealCountChangeAmount = 2
 
 const mutationConfig:MutationObserverInit = {
@@ -14,53 +14,77 @@ const mutationConfig:MutationObserverInit = {
   subtree: true
 }
 
-type TerminalizeProps = {
-  speedInLinesPerSecond?:number
-  acceleration?:number
-  children:React.ReactNode | React.ReactNode[] | undefined
-}
-
 export function Terminalize(props:TerminalizeProps) {
-  useEffect(() => {
-    const root = document.getElementById('terminalize')
-    if (!root) return
+  const rootRef = useRef<HTMLDivElement>(null)
+  const charRef = useRef<HTMLDivElement>(null)
+  const cursorRef = useRef<HTMLDivElement>(null)
 
-    const speedInLinesPerSecond = props.speedInLinesPerSecond ?? 100 // Default to 100 lines per second
+  useEffect(() => {
+    const root = rootRef.current
+    if (!root) throw new Error('Terminalize root element is null')
+
+    const char = charRef.current
+    if (!char) throw new Error('Terminalize char element is null')
+
+    const cursor = cursorRef.current
+    if (!cursor) throw new Error('Terminalize cursor element is null')
+
+    const speedInLinesPerSecond = props.linesPerSecond ?? 100 // Default to 100 lines per second
     const speedAsIntervalMs = 1000 / speedInLinesPerSecond
 
     const intervalManager = new IntervalManager(speedAsIntervalMs)
 
+    const animate = (startY:number) => {
+      Animations.teletypeRender(
+        root,
+        char,
+        cursor,
+        intervalManager,
+        props,
+        startY,
+        startingLinesToRevealPerIteration,
+        iterationsBetweenLineRevealCountChanges,
+        linesToRevealCountChangeAmount,
+      )
+    }
+
+    const showEverything = () => {
+      root.style.removeProperty('max-height')
+      intervalManager.stop()
+    }
+
     const callback:MutationCallback = mutationList => {
       const topMostChanged = Helpers.getTopMostChangedNode(mutationList)
       if (topMostChanged) {
-        Helpers.animateOpeningFrom(
-          root,
-          intervalManager,
-          topMostChanged.y,
-          lineHeight,
-          startingLinesToRevealPerIteration,
-          iterationsBetweenLineRevealCountChanges,
-          linesToRevealCountChangeAmount,
-        )
+        animate(topMostChanged.y)
       } else {
-        root.style.removeProperty('max-height')
+        showEverything()
       }
     }
 
     const observer = new MutationObserver(callback)
     observer.observe(root, mutationConfig)
 
+    // Only played on full page load/reload
+    animate(0)
+
     return () => {
       observer.disconnect()
       intervalManager.stop()
     }
-  })
+  }, [
+    props
+  ])
 
   return (
-    <div id="terminalize" className="terminalize">
-      {/* <div id="terminalize-inner" className="terminalize-inner"> */}
-        {props.children}
-      {/* </div> */}
+    <div ref={rootRef} className="terminalize" style={{maxHeight: '0'}}>
+      <div ref={cursorRef} className="cursor hidden">
+        <span ref={charRef} className="char" />
+        <span className="blocker" />
+        <span className="blocker-below" />
+      </div>
+
+      {props.children}
     </div>
   )
 }

@@ -1,15 +1,19 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import './index.scss'
 import App from './App.tsx'
 import { BrowserRouter } from 'react-router-dom'
+import './index.scss'
+import './Mobile.scss'
 
 const root = document.getElementById('root')
 if (!root) throw new Error('No root element')
 
 createRoot(root).render(
   <StrictMode>
-    <BrowserRouter>
+    <BrowserRouter future={{
+      v7_startTransition:   true,
+      v7_relativeSplatPath: true
+    }}>
       <App />
     </BrowserRouter>
   </StrictMode>

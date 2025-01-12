@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom'
-import { BlogPage } from './BlogPage'
+import { Blog } from './Blog'
 import { articleDefs } from './ArticleDefs'
 
 export function BlogRoutes() {
@@ -11,7 +11,7 @@ export function BlogRoutes() {
 
   return (
     <Routes>
-      <Route path="/" Component={BlogPage} />
+      <Route path="/" Component={Blog} />
       {articleRoutes}
     </Routes>
   )

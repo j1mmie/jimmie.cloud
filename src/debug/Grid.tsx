@@ -24,7 +24,7 @@ export function Grid(props:GridProps) {
   })
 
 
-  const finalClassName = gridEnabled ? `${props.className} grid` : props.className
+  const finalClassName = gridEnabled ? `${props.className} debug-grid` : props.className
 
   return (
     <div className={finalClassName}>

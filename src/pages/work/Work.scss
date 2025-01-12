@@ -1,0 +1,39 @@
+@use '../../style/Sizes.scss';
+@use '../../style/ColorAssignments.scss';
+
+a.hero {
+  display: block;
+}
+
+a.hero:hover {
+  background: none;
+  outline: 4px solid ColorAssignments.$color-link;
+  outline-offset: -4px;
+}
+
+div.hero img, a.hero img, img.hero {
+  object-fit: cover;
+  width: 100%;
+  margin-bottom: Sizes.lh(1);
+}
+
+div.hero .youtube-iframe-container {
+  object-fit: cover;
+  width: 100%;
+}
+
+div.hero {
+  .youtube-iframe-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+  }
+
+  .youtube-iframe-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}

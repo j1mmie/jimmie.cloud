@@ -47,7 +47,8 @@ https://www.youtube.com/watch?v=eDaYK1cOCmw
 <!-- /wp:core-embed/youtube -->
 
 <!-- wp:paragraph -->
-<p>The first thing you'll notice is, <strong>you suck at Mario</strong>.</p>
+<p>The first thing you'll notice is, <em>you suck at Mario</em></p>
+<!-- <p>The first thing you'll notice is, you suck at Mario.</p> -->
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
@@ -83,7 +84,12 @@ https://www.youtube.com/watch?v=eDaYK1cOCmw
 <!-- /wp:paragraph -->
 
 <!-- wp:image {"align":"center","id":184,"width":300,"height":300,"sizeSlug":"large"} -->
-<div class="wp-block-image"><figure class="aligncenter size-large is-resized"><img src="https://www.subpixel.net/wp-content/uploads/2020/03/Mario-Tight.gif" alt="" class="wp-image-184" width="300" height="300"/><figcaption>Mario visually stomps an enemy, but gets killed</figcaption></figure></div>
+<div class="grid-align-v">
+  <figure class="aligncenter size-large is-resized">
+    <img src="https://www.subpixel.net/wp-content/uploads/2020/03/Mario-Tight.gif" alt="" class="wp-image-184" width="300" height="300"/>
+    <figcaption>Mario visually stomps an enemy, but gets killed</figcaption>
+  </figure>
+</div>
 <!-- /wp:image -->
 
 <!-- wp:paragraph -->
@@ -212,7 +218,7 @@ https://www.youtube.com/watch?v=eDaYK1cOCmw
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p>The swapped terminology is <em>bound</em> to cause confusion, possibly anger. I'm sticking to the FPS-friendly terminology for the rest of the article, because that's what I know best. But the point of this article is less about terminology, and more about the concept. Call these boxes whatever works best for you in your own projects. For example, AttackBox and DefenseBox are one more explicit option.</p>
+<p>The swapped terminology is <em>bound</em> to cause confusion, possibly anger. I'm sticking to the FPS-friendly terminology for the rest of the article, because that's what I know best. But the point of this article is less about terminology, and more about the concept. Call these boxes whatever works best for you in your own projects. For example, AttackBox and DefenseBox are one, more explicit, option.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->

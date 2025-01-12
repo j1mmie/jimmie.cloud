@@ -1,0 +1,63 @@
+@use '../../../style/Colors.scss';
+@use '../../../style/Sizes.scss';
+
+@use 'sass:color';
+
+.ansi-art-canvas {
+  width: round(down, 100%, 2ch);
+  text-align: center;
+  display: grid;
+}
+
+.ansi-art-centerer {
+  margin: 0 auto;
+}
+
+.ansi-art-sizer {
+  width: round(up, 100%, 2ch);
+  display: inline-block;
+}
+
+.ansi-art {
+  text-align: left;
+  display: inline-block;
+  padding-right: calc((round(up, 100%, 2ch) - 100%));
+}
+
+.ansi-line {
+  display: inline;
+  white-space: pre;
+}
+
+// $color-dark-top: #2e3f58;
+$color-dark-top: #172b4a;
+$color-dark-bottom: #3e6297; // blue
+// $color-dark-bottom: #327a79; // green
+
+
+// $color-lite-top: #d68297;
+$color-lite-top: Colors.$color-pink;
+$color-lite-bottom: Colors.$color-orange;
+
+$gradient-size: 24;
+
+@for $i from 0 through $gradient-size {
+  $factor: calc($i / $gradient-size);
+  $current-lite: color.mix($color-lite-bottom, $color-lite-top, calc($factor * 100%));
+  $current-dark: color.mix($color-dark-bottom, $color-dark-top, calc($factor * 100%));
+
+
+  .line-#{$i} {
+    .lite_fg {
+      color: $current-lite;
+    }
+
+    .dark_fg {
+      color: $current-dark;
+    }
+
+    .dark_bg {
+      background-color: $current-dark;
+    }
+  }
+}

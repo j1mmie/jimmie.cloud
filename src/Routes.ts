@@ -1,11 +1,11 @@
 import { BlogRoutes } from './pages/blog/BlogRoutes'
-import { FunPage } from './pages/fun/FunPage'
+import { Other } from './pages/other/Other'
 import { HomePage } from './pages/home/HomePage'
-import { MyWorkRoutes } from './pages/my-work/MyWorkRoutes'
+import { WorkRoutes } from './pages/work/WorkRoutes'
 
 export const routes = [
-  { id: 'home', title: 'About Me',  to: '/',     path: '/',       comp: HomePage     },
-  { id: 'blog', title: 'Blog',      to: '/blog', path: '/blog/*', comp: BlogRoutes   },
-  { id: 'work', title: 'My Work',   to: '/work', path: '/work/*', comp: MyWorkRoutes },
-  { id: 'fun',  title: 'Fun Stuff', to: '/fun',  path: '/fun',    comp: FunPage      },
+  { id: 'home', title: 'About Me',    to: '/',      path: '/',       comp: HomePage     },
+  { id: 'blog', title: 'Blog',        to: '/blog',  path: '/blog/*', comp: BlogRoutes   },
+  { id: 'work', title: 'My Work',     to: '/work',  path: '/work/*', comp: WorkRoutes },
+  { id: 'fun',  title: 'Other Stuff', to: '/other', path: '/other',  comp: Other    },
 ]

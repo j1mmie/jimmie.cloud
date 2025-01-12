@@ -2,18 +2,23 @@
 @use './style/ColorAssignments.scss';
 @use './style/Sizes.scss';
 
+:root {
+  --font-size: 20px;
+  --line-height: 24px;
+}
+
 @font-face {
   font-family: 'BlockFont';
   src: url('./assets/BlockFont.woff') format('woff');
 }
 
+
 html {
-  font-size: Sizes.$font-size;
+  font-size: var(--font-size);
   font-family: 'input-mono', 'BlockFont', monospace;
   font-style: normal;
-  background: #112;
   color: Colors.$color-white;
-  line-height: Sizes.$line-height;
+  line-height: var(--line-height);
   min-height: 100%;
   margin: 0;
   padding: 0;
@@ -27,8 +32,13 @@ body {
 
 h1, h2, h3, h4, h5 {
   color: ColorAssignments.$color-header;
-  margin: 0;
+  margin: 0 0 Sizes.lh(1) 0;
   padding: 0;
+
+  & + p, & + .group, & + ul,
+  & + h1, & + h2, & + h3, & + h4, & + h5 {
+    margin-top: Sizes.lh(-1);
+  }
 }
 
 h1 {
@@ -44,10 +54,6 @@ h2 {
 h3, h4, h5 {
   font-size: 1rem;
   line-height: Sizes.lh(1);
-}
-
-h3, h4, h5 {
-  margin-top: Sizes.lh(1);
 }
 
 h3 {
@@ -68,15 +74,21 @@ a {
   text-decoration: underline;
   text-underline-offset: 3px;
   text-decoration-thickness: 2px;
+  display: inline-block;
   // transition: color 0.15s;
 }
 
 a:hover {
   background: ColorAssignments.$color-link;
   color: Colors.$color-dark-blue;
-
+  text-decoration: none;
 }
 
+a:focus {
+  background: rgba(ColorAssignments.$color-link, .75);
+  color: Colors.$color-dark-blue;
+  outline: none;
+}
 
 hr {
   border: 0;
@@ -105,6 +117,13 @@ ul {
   margin: 0;
   padding: 0;
   list-style: '• ';
+  margin: 0 0 Sizes.lh(1) 0;
+}
+
+ol {
+  margin: 0;
+  padding: 0;
+  margin: 0 0 Sizes.lh(1) 2ch;
 }
 
 ul ul {
@@ -116,30 +135,48 @@ li {
   margin: 0;
   padding: 0;
   margin-left: 3ch;
-  margin-top: Sizes.lh(1);
+
 }
 
+ul.airy {
+  li {
+    margin-top: Sizes.lh(1);
+  }
 
-ul ul li {
-  margin-top: 0;
+
+  li:first-child {
+    margin-top: 0;
+  }
+
+
+  ul li {
+    margin-top: 0;
+  }
 }
 
 code {
   font-family: 'input-mono', 'BlockFont', monospace;
   font-size: 1rem;
   margin-left: -4px;
-  // padding: Sizes.lh(.25) 1ch;
-  padding: 1px 4px;
+  padding: 0px 1ch;
+  // padding: 1px 4px;
   border-radius: 0.25ch;
   background: rgba(Colors.$color-green, 0.2);
-  outline: 1px solid rgba(Colors.$color-green, 0.5);
-  outline-offset: -1px;
+  // outline: 1px solid rgba(Colors.$color-green, 0.5);
+  // outline-offset: -1px;
+}
+
+.airy code {
+  padding: 4px 1ch;
+}
+
+pre {
+  margin: Sizes.lh(1) 0;
 }
 
 pre code {
   display: block;
   font-family: 'input-mono', 'BlockFont', monospace;
-  font-size: 1rem;
   border-radius: 0.25ch;
   background: rgba(Colors.$color-green, 0.2);
   outline: 1px solid rgba(Colors.$color-green, 0.5);
@@ -155,6 +192,7 @@ table {
   line-height: Sizes.lh(1);
   margin: 0;
   border-collapse: collapse;
+  position: relative;
 }
 
 th {
@@ -175,12 +213,100 @@ th + th, td + td, th + td {
   padding-left: 1ch;
 }
 
-table.airy {
-  border-collapse: separate;
-  border-spacing: 1ch Sizes.lh(1);
-  margin-bottom: 0 - Sizes.lh(1);
+table.vertical {
+  &.airy {
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: Sizes.lh(1);
+
+    th, td {
+      padding-bottom: Sizes.lh(1);
+    }
+
+    tr:last-child {
+      th, td {
+        padding-bottom: 0;
+      }
+    }
+  }
+
+  &.distributed {
+    table-layout: fixed;
+  }
+
+  &.width100 {
+    width: 100%;
+  }
+
+  &.width80 {
+    width: 80%;
+  }
 }
 
 figure {
   text-align: center;
+}
+
+/* TODO: bold and italic version of Input Mono seem
+ * to increase the line-height uncontrollably. */
+
+strong, b {
+  font-weight: bold;
+  line-height: calc(Sizes.lh(1) - 4px); // HACK: -2px to compensate for the extra line-height
+}
+
+em, i {
+  line-height: 20px;
+  font-weight: normal;
+  font-style: italic;
+
+  line-height: calc(Sizes.lh(1) - 4px); // HACK: -2px to compensate for the extra line-height
+}
+
+.flex-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: start;
+
+  &.width80 {
+    max-width: 100%;
+  }
+
+  > * {
+    width: round(down, 40%, 1ch);
+    min-width: 26ch;
+    padding-right: 2ch;
+  }
+
+  > *:last-child {
+    padding-right: 0;
+  }
+}
+
+
+.grid-align-v {
+  height: auto;
+  height: calc-size(auto, round(up, size, var(--line-height)));
+}
+
+
+.grid-align-h {
+  width: auto;
+  width: calc-size(auto, round(up, size, 1ch));
+}
+
+.youtube-iframe-container {
+  margin-bottom: Sizes.lh(1);
+  display: inline-block;
+}
+
+.youtube-iframe {
+  width: 39ch;
+  height: Sizes.lh(12)
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: 41ch 39ch;
 }

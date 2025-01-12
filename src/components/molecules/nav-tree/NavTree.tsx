@@ -2,9 +2,9 @@ import { NavLink } from 'react-router-dom'
 import './NavTree.scss'
 
 export type NavTreeItem = {
+  to?:string
   title:string
   desc:string
-  to:string
 }
 
 export type NavTreeProps = {
@@ -12,24 +12,26 @@ export type NavTreeProps = {
 }
 
 export function NavTree(props:NavTreeProps) {
-  const lastItemIndex = props.items.length - 1
-  const itemEls = props.items.map((item, index) => {
-    const treeChar = index === lastItemIndex ? '└' : '├'
-    const treeLineChar = index < lastItemIndex ? '│' : ''
-
-    return (
-      <li key={item.to}>
-        {treeChar}&nbsp;
-        <NavLink
-          to={item.to}
-          className={({ isActive }) => (isActive ? 'selected' : '')}
-        >
-          {item.title}
-        </NavLink>
-        &nbsp;- {item.desc}<br />
-        {treeLineChar}
-      </li>
-    )
+  const itemEls = props.items.map((item) => {
+    if (item.to) {
+      return (
+        <li key={item.to}>
+          <NavLink
+            to={item.to}
+            className={({ isActive }) => (isActive ? 'selected' : '')}
+          >
+            {item.title}
+          </NavLink>
+          &nbsp;- {item.desc}<br />
+        </li>
+      )
+    } else {
+      return (
+        <li key={item.title}>
+          {item.desc}
+        </li>
+      )
+    }
   })
 
   return (

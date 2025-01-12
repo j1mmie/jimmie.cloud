@@ -1,0 +1,10 @@
+.ansi-art-xl {
+  margin-bottom: calc(2 * var(--line-height));
+}
+
+.ansi-art-lg, .ansi-art-md, .ansi-art-sm {
+  display: none;
+
+  margin-bottom: calc(2 * var(--line-height));
+}
+

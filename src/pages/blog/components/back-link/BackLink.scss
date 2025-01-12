@@ -1,0 +1,10 @@
+.back-link {
+  position: realtive;
+  padding-left: 2ch;
+}
+
+.back-link::after {
+  position: absolute;
+  left: 0;
+  content: '←';
+}
