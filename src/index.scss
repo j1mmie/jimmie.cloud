@@ -1,3 +1,4 @@
+
 @use './style/Colors.scss';
 @use './style/ColorAssignments.scss';
 @use './style/Sizes.scss';
@@ -7,15 +8,8 @@
   --line-height: 24px;
 }
 
-@font-face {
-  font-family: 'BlockFont';
-  src: url('./assets/BlockFont.woff') format('woff');
-}
-
-
 html {
   font-size: var(--font-size);
-  font-family: 'input-mono', 'BlockFont', monospace;
   font-style: normal;
   color: Colors.$color-white;
   line-height: var(--line-height);
@@ -28,7 +22,6 @@ body {
   margin: 0;
   padding: 0;
 }
-
 
 h1, h2, h3, h4, h5 {
   color: ColorAssignments.$color-header;
@@ -155,7 +148,7 @@ ul.airy {
 }
 
 code {
-  font-family: 'input-mono', 'BlockFont', monospace;
+  font-family: 'input-mono', monospace;
   font-size: 1rem;
   margin-left: -4px;
   padding: 0px 1ch;
@@ -176,7 +169,7 @@ pre {
 
 pre code {
   display: block;
-  font-family: 'input-mono', 'BlockFont', monospace;
+  font-family: 'input-mono', monospace;
   border-radius: 0.25ch;
   background: rgba(Colors.$color-green, 0.2);
   outline: 1px solid rgba(Colors.$color-green, 0.5);
@@ -247,8 +240,8 @@ figure {
   text-align: center;
 }
 
-/* TODO: bold and italic version of Input Mono seem
- * to increase the line-height uncontrollably. */
+//TODO: bold and italic version of Input Mono seem
+//to increase the line-height uncontrollably.
 
 strong, b {
   font-weight: bold;

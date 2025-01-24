@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import './Hr.scss'
+import { VisualOnlyContent } from '../visual-only-content/VisualOnlyContent'
 
 const alphabet = '-_'
 
@@ -63,8 +64,8 @@ export function Hr(props:HrProps) {
 
 
   return (
-    <div className="hr">
+    <VisualOnlyContent className="hr">
       {lineEls}
-    </div>
+    </VisualOnlyContent>
   )
 }

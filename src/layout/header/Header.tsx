@@ -1,30 +1,32 @@
 import { Hr } from '../../components/atoms/hr/Hr'
-import { AnsiArtRenderer } from './ansi-art-renderer/AnsiArtRenderer'
+import { AnsiArtExtraLarge } from './ansi-art/components/AnsiArtExtraLarge'
 import './Header.scss'
-
-import AnsiArtXl from './ansi-art/jimmie-xl.utf8ans?raw'
-import AnsiArtLg from './ansi-art/jimmie-lg.utf8ans?raw'
-import AnsiArtMd from './ansi-art/jimmie-md.utf8ans?raw'
-import AnsiArtSm from './ansi-art/jimmie-sm.utf8ans?raw'
+import './ansi-art/style/AnsiArt.scss'
+import { AnsiArtLarge } from './ansi-art/components/AnsiArtLarge'
+import { AnsiArtMedium } from './ansi-art/components/AnsiArtMedium'
+import { AnsiArtSmall } from './ansi-art/components/AnsiArtSmall'
+import { AnsiArtCanvas } from './ansi-art/AnsiArtCanvas'
 
 export function Header() {
   return (
     <div>
-      <div className="ansi-art-xl">
-        <AnsiArtRenderer rawAnsii={AnsiArtXl} />
-      </div>
+      <AnsiArtCanvas>
+        <div className="ansi-art-xl">
+          {AnsiArtExtraLarge()}
+        </div>
 
-      <div className="ansi-art-lg">
-        <AnsiArtRenderer rawAnsii={AnsiArtLg} lineMultiplier={2} />
-      </div>
+        <div className="ansi-art-lg">
+          {AnsiArtLarge()}
+        </div>
 
-      <div className="ansi-art-md">
-        <AnsiArtRenderer rawAnsii={AnsiArtMd} lineMultiplier={5} />
-      </div>
+        <div className="ansi-art-md">
+          {AnsiArtMedium()}
+        </div>
 
-      <div className="ansi-art-sm">
-        <AnsiArtRenderer rawAnsii={AnsiArtSm} lineMultiplier={5} />
-      </div>
+        <div className="ansi-art-sm">
+          {AnsiArtSmall()}
+        </div>
+      </AnsiArtCanvas>
 
       <Hr width={80} />
     </div>

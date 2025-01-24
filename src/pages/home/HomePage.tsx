@@ -2,7 +2,7 @@ import './HomePage.scss'
 
 export function HomePage() {
   return (
-    <div>
+    <article>
       <h2>Hello</h2>
       <p>
         My name is Jimmie Tyrrell and I like to make things.
@@ -54,6 +54,6 @@ export function HomePage() {
       <h3>Education</h3>
 
       <p><a href="https://www.wpi.edu/" target="_blank">Worcester Polytechnic Institute</a>, where I studied Computer Science</p>
-    </div>
+    </article>
   )
 }

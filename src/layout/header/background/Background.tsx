@@ -2,6 +2,7 @@ import backgroundText from './Background.txt?raw'
 import './Background.scss'
 import { ReactNode } from 'react'
 import { Maths } from '../../../../lib/Maths'
+import { VisualOnlyContent } from '../../../components/atoms/visual-only-content/VisualOnlyContent'
 
 const startOpacity      = 1
 const endOpacity        = 0
@@ -30,9 +31,9 @@ export function Background() {
     const line = backgroundText.substring(charIndex, charIndex + 86)
 
     const lineEl = (
-      <div key={charIndex} className="background-line" style={{ opacity }}>
+      <VisualOnlyContent key={charIndex} className="background-line" style={{ opacity }}>
         {line}
-      </div>
+      </VisualOnlyContent>
     )
 
     lineEls.push(lineEl)
@@ -45,10 +46,10 @@ export function Background() {
   }
 
   return (
-    <div className="background">
-      <div className="background-lines">
+    <div className="background title">
+      <VisualOnlyContent className="background-lines title">
         {lineEls}
-      </div>
+      </VisualOnlyContent>
     </div>
   )
 }

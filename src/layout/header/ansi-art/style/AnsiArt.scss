@@ -1,0 +1,109 @@
+@use '../../../../style/Colors.scss';
+@use 'sass:color';
+
+.ansi-art {
+  font-size: 20px;
+  line-height: 24px;
+  white-space: pre;
+}
+
+.ansi-art {
+  line-height: 24px;
+}
+
+.ansi-char-sp {
+  height: 24px;
+  display: inline-block;
+}
+
+.ansi-char-bl {
+  height: 24px;
+  display: inline-block;
+}
+
+.ansi-char-bh {
+  height: 24px;
+  position: relative;
+  display: inline-block;
+}
+
+.ansi-char-bh:after {
+  content: " ";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+}
+
+.ansi-char-th:after {
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+}
+
+.ansi-char-th {
+  height: 24px;
+  position: relative;
+  display: inline-block;
+}
+
+.ansi-char, .ansi-html-char, .ansi-nested-html-char {
+  vertical-align: bottom;
+}
+
+/* Generator */
+
+
+
+/* Custom color stuff */
+
+
+// $color-dark-top: #2e3f58;
+$color-dark-top: #172b4a;
+$color-dark-bottom: #3e6297; // blue
+// $color-dark-bottom: #327a79; // green
+
+
+// $color-lite-top: #d68297;
+$color-lite-top: Colors.$color-pink;
+$color-lite-bottom: Colors.$color-orange;
+
+$gradient-size: 24;
+
+@for $i from 0 through $gradient-size {
+  $factor: calc($i / $gradient-size);
+  $current-lite: color.mix($color-lite-bottom, $color-lite-top, calc($factor * 100%));
+  $current-dark: color.mix($color-dark-bottom, $color-dark-top, calc($factor * 100%));
+
+
+  .ansi-line-#{$i} {
+
+    .ansi-fg-magenta .ansi-char {
+      color: $current-dark;
+    }
+    .ansi-fg-magenta .ansi-html-char,
+    .ansi-fg-magenta .ansi-nested-html-char:after {
+      background: $current-dark;
+    }
+
+    .ansi-bg-magenta .ansi-char {
+      background: $current-dark;
+    }
+    .ansi-bg-magenta .ansi-html-char,
+    .ansi-bg-magenta .ansi-nested-html-char {
+      background: $current-dark;
+    }
+
+    .ansi-fg-magenta-bright .ansi-char {
+      color: $current-lite;
+    }
+    .ansi-fg-magenta-bright .ansi-html-char,
+    .ansi-fg-magenta-bright .ansi-nested-html-char:after {
+      background: $current-lite;
+    }
+  }
+}
