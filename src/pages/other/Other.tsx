@@ -1,4 +1,4 @@
-export function Other() {
+export default function Other() {
   return (
     <div>
       <h2>Other Stuff</h2>

@@ -1,31 +1,17 @@
 import { Hr } from '../../components/atoms/hr/Hr'
-import { AnsiArtExtraLarge } from './ansi-art/components/AnsiArtExtraLarge'
 import './Header.scss'
 import './ansi-art/style/AnsiArt.scss'
-import { AnsiArtLarge } from './ansi-art/components/AnsiArtLarge'
-import { AnsiArtMedium } from './ansi-art/components/AnsiArtMedium'
-import { AnsiArtSmall } from './ansi-art/components/AnsiArtSmall'
+import { AnsiArt } from './ansi-art/components/AnsiArt'
 import { AnsiArtCanvas } from './ansi-art/AnsiArtCanvas'
 
 export function Header() {
   return (
     <div>
       <AnsiArtCanvas>
-        <div className="ansi-art-xl">
-          {AnsiArtExtraLarge()}
-        </div>
-
-        <div className="ansi-art-lg">
-          {AnsiArtLarge()}
-        </div>
-
-        <div className="ansi-art-md">
-          {AnsiArtMedium()}
-        </div>
-
-        <div className="ansi-art-sm">
-          {AnsiArtSmall()}
-        </div>
+        <AnsiArt sizeClass="xl" path="/ansi-html/jimmie-xl.html" minLineCount={16} />
+        <AnsiArt sizeClass="lg" path="/ansi-html/jimmie-lg.html" minLineCount={13} />
+        <AnsiArt sizeClass="md" path="/ansi-html/jimmie-md.html" minLineCount={6} />
+        <AnsiArt sizeClass="sm" path="/ansi-html/jimmie-sm.html" minLineCount={6} />
       </AnsiArtCanvas>
 
       <Hr width={80} />

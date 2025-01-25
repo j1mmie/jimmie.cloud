@@ -1,7 +1,7 @@
 import ProjectHeader from '../../projects-core/project/header/ProjectHeader'
 import Project from '../../projects-core/project/Project'
 
-export function Dynect() {
+export default function Dynect() {
   return (
     <Project>
       <ProjectHeader>Dynect</ProjectHeader>

@@ -1,7 +1,7 @@
 import RawXml from './Hitboxes.xml?raw'
 import { BackLink } from '../../components/back-link/BackLink'
 
-export function Hitboxes() {
+export default function Hitboxes() {
   return (
     <article>
       <BackLink />

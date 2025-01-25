@@ -1,7 +1,7 @@
 import ProjectHeader from '../../projects-core/project/header/ProjectHeader'
 import Project from '../../projects-core/project/Project'
 
-export function DynViz() {
+export default function DynViz() {
   return (
     <Project>
       <ProjectHeader>DynViz</ProjectHeader>

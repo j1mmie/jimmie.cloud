@@ -9,11 +9,19 @@ import { routes } from './Routes'
 import { Terminalize } from './terminalize/Terminalize'
 import { Background } from './layout/header/background/Background'
 import { VerticalExpander } from './terminalize/VerticalExpander'
+import { PageLoader } from './components/molecules/page-loader/PageLoader'
 
 function App() {
   const routeElements = routes.map(route => {
+
+    const pageLoader = (
+      <PageLoader>
+        <route.lazyComp />
+      </PageLoader>
+    )
+
     return (
-      <Route key={route.id} path={route.path} Component={route.comp} />
+      <Route key={route.id} path={route.path} element={pageLoader} />
     )
   })
 
@@ -22,7 +30,6 @@ function App() {
       <Grid className="main-content">
         <Background />
         <div className="even-ch-width">
-
           <Terminalize
             lineHeightPixels={24}
             linesPerSecond={60}

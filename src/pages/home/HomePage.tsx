@@ -1,6 +1,6 @@
 import './HomePage.scss'
 
-export function HomePage() {
+export default function HomePage() {
   return (
     <article>
       <h2>Hello</h2>

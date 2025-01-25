@@ -3,7 +3,7 @@ import ProjectSubheader from '../../projects-core/project/sub-header/ProjectSubh
 import YouTubeIFrame from '../../../../../lib/components/youtube-iframe/YouTubeIFrame'
 import Project from '../../projects-core/project/Project'
 
-export function Goat() {
+export default function Goat() {
   return (
     <Project>
       <ProjectHeader>Ready Set Goat!</ProjectHeader>

@@ -3,7 +3,7 @@ import ProjectHeader from '../../projects-core/project/header/ProjectHeader'
 import Project from '../../projects-core/project/Project'
 import ProjectSubheader from '../../projects-core/project/sub-header/ProjectSubheader'
 
-export function StarWars() {
+export default function StarWars() {
   return (
     <Project>
       <ProjectHeader>Star Wars: Commander</ProjectHeader>

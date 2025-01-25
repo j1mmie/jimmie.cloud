@@ -8,27 +8,27 @@ export const projectCategoryDefs:ProjectCategoryDef[] = [
     title: 'Games',
     projectDefs: [
       {
-        to:    'slipstream',
-        title: 'Slipstream: Rogue Space',
-        comp:   Projects.Slipstream,
-        desc:  '120 player co-op game for desktop/mobile (Unity)',
+        to:       'slipstream',
+        title:    'Slipstream: Rogue Space',
+        lazyComp: Projects.Slipstream,
+        desc:     '120 player co-op game for desktop/mobile (Unity)',
       },
       {
-        to:    'starwars',
-        title: 'Star Wars: Commander',
-        comp:   Projects.StarWars,
-        desc:  '3d isometric mobile RTS game (Unity)',
+        to:       'starwars',
+        title:    'Star Wars: Commander',
+        lazyComp: Projects.StarWars,
+        desc:     '3d isometric mobile RTS game (Unity)',
       },
       {
-        to:    'pirates',
-        title: 'Pirates of the Caribbean: Isles of War',
-        comp:   Projects.Pirates,
-        desc:  'multiplayer strategy game (Flash)',
+        to:       'pirates',
+        title:    'Pirates of the Caribbean: Isles of War',
+        lazyComp: Projects.Pirates,
+        desc:     'multiplayer strategy game (Flash)',
       },
       {
-        title:  'others',
-        comp:   undefined,
-        desc:  'Other Playdom / Disney games: City of Wonder, Armies of Magic, Lil\' Farm Life, Verdonia'
+        title:    'others',
+        lazyComp: undefined,
+        desc:     'Other Playdom / Disney games: City of Wonder, Armies of Magic, Lil\' Farm Life, Verdonia'
 
       }
     ]
@@ -39,34 +39,34 @@ export const projectCategoryDefs:ProjectCategoryDef[] = [
     path:  'apps/:projectId',
     projectDefs: [
       {
-        to:    'reflektive',
-        title: 'Reflektive',
-        comp:   Projects.Reflektive,
+        to:       'reflektive',
+        title:    'Reflektive',
+        lazyComp: Projects.Reflektive,
         desc:  'employee performance management suite',
       },
       {
-        to:    'topo',
-        title: 'Topo Patient Search',
-        comp:   Projects.Topo,
-        desc:  'medical record search and management',
+        to:       'topo',
+        title:    'Topo Patient Search',
+        lazyComp: Projects.Topo,
+        desc:     'medical record search and management',
       },
       {
-        to:    'dyn',
-        title: 'Dyn Updater',
-        comp:   Projects.Dyn,
-        desc:  'dynamic DNS updater for Windows',
+        to:       'dyn',
+        title:    'Dyn Updater',
+        lazyComp: Projects.Dyn,
+        desc:     'dynamic DNS updater for Windows',
       },
       {
-        to:    'dynViz',
-        title: 'DynViz',
-        comp:   Projects.DynViz,
-        desc:  'realtime 3d visualization of global DNS queries',
+        to:       'dynViz',
+        title:    'DynViz',
+        lazyComp: Projects.DynViz,
+        desc:     'realtime 3d visualization of global DNS queries',
       },
       {
-        to:   'dynect',
-        title: 'Dynect',
-        comp:  Projects.Dynect,
-        desc:  'enterprise DNS management platform',
+        to:       'dynect',
+        title:    'Dynect',
+        lazyComp: Projects.Dynect,
+        desc:     'enterprise DNS management platform',
       },
     ]
   },
@@ -76,22 +76,22 @@ export const projectCategoryDefs:ProjectCategoryDef[] = [
     path:  'jams/:projectId',
     projectDefs: [
       {
-        to:    'surf',
-        title: 'Procedural Surf',
-        comp:   Projects.Surf,
-        desc:  'procedural parkour FPS, à la Counter-Strike surf maps',
+        to:       'surf',
+        title:    'Procedural Surf',
+        lazyComp: Projects.Surf,
+        desc:     'procedural parkour FPS, à la Counter-Strike surf maps',
       },
       {
-        to:    'nfinity',
-        title: 'Nfinity',
-        comp:   Projects.Nfinity,
-        desc:  'generate 3d explorable art galleries for NFTs',
+        to:       'nfinity',
+        title:    'Nfinity',
+        lazyComp: Projects.Nfinity,
+        desc:     'generate 3d explorable art galleries for NFTs',
       },
       {
-        to:    'goat',
-        title: 'Ready Set Goat',
-        comp:   Projects.Goat,
-        desc:  'goat-themed mobile arcade game w/ global leaderboard',
+        to:       'goat',
+        title:    'Ready Set Goat',
+        lazyComp: Projects.Goat,
+        desc:     'goat-themed mobile arcade game w/ global leaderboard',
       }
       ,
     ]
@@ -102,10 +102,10 @@ export const projectCategoryDefs:ProjectCategoryDef[] = [
     path:  'open-source/:projectId',
     projectDefs: [
       {
-        to:    'unspoken',
-        title: 'Unspoken',
-        comp:   Projects.Unspoken,
-        desc:  'library for condensing network messagings in Typescript',
+        to:       'unspoken',
+        title:    'Unspoken',
+        lazyComp: Projects.Unspoken,
+        desc:     'library for condensing network messagings in Typescript',
       }
 
     ]

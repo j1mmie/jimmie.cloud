@@ -5,7 +5,7 @@ import ProjectSubheader from '../../projects-core/project/sub-header/ProjectSubh
 import screenshot from './images/reflektive.png'
 import '../../Work.scss'
 
-export function Reflektive() {
+export default function Reflektive() {
   return (
     <Project>
       <ProjectHeader>Reflektive</ProjectHeader>

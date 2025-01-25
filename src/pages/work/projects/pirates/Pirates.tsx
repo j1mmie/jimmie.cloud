@@ -3,7 +3,7 @@ import ProjectHeader from '../../projects-core/project/header/ProjectHeader'
 import Project from '../../projects-core/project/Project'
 import ProjectSubheader from '../../projects-core/project/sub-header/ProjectSubheader'
 
-export function Pirates() {
+export default function Pirates() {
   return (
     <Project>
       <ProjectHeader>Pirates of the Caribbean: Isles of War</ProjectHeader>

@@ -4,7 +4,7 @@ import YouTubeIFrame from '../../../../../lib/components/youtube-iframe/YouTubeI
 import Project from '../../projects-core/project/Project'
 import Screenshot from './images/dyndns.jpg'
 
-export function Dyn() {
+export default function Dyn() {
   return (
     <Project>
       <ProjectHeader>Dyn Updater</ProjectHeader>

@@ -3,7 +3,7 @@ import ProjectHeader from '../../projects-core/project/header/ProjectHeader'
 import Project from '../../projects-core/project/Project'
 import ProjectSubheader from '../../projects-core/project/sub-header/ProjectSubheader'
 
-export function Surf() {
+export default function Surf() {
   return (
     <Project>
       <ProjectHeader>Untitled Procedural "Surf" Demo</ProjectHeader>
