@@ -16,7 +16,7 @@ export default function HomePage() {
           <h3>Currently working on</h3>
           <ul>
             <li><a href="https://www.playslipstream.com" target="_blank">Slipstream: Rogue Space</a></li>
-            <li>This website</li>
+            <li><a href="https://github.com/j1mmie/jimmie.cloud" target="_blank">This website</a></li>
             <li>A <a href="https://www.reddit.com/r/cyberdeck" target="_blank">Cyberdeck</a></li>
           </ul>
         </div>
