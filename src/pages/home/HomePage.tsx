@@ -3,6 +3,12 @@ import './HomePage.scss'
 export default function HomePage() {
   return (
     <article>
+      <p>
+        <strong>
+          WORK IN PROGRESS:
+        </strong>{" "}
+        Some pages on this site are not complete yet.
+      </p>
       <h2>Hello</h2>
       <p>
         My name is Jimmie Tyrrell and I like to make things.
