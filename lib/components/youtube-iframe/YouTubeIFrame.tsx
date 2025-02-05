@@ -9,7 +9,10 @@ interface YouTubeIFrameProps {
   title:string,
   width?:string
   height?:string,
-  startTime?:string
+  startTime?:string,
+  autoPlay?:boolean,
+  loop?:boolean,
+  hideControls?:boolean
 }
 
 function convertTimeStringToSeconds(timeString:string) {
@@ -23,26 +26,78 @@ const YouTubeIFrame:React.FC<YouTubeIFrameProps> = ({
   width  = '560',
   height = '315',
   startTime = undefined,
+  autoPlay = false,
+  loop = false,
+  hideControls = false
 }) => {
   let src = `https://www.youtube.com/embed/${videoId}`
+
+  const allowList = [
+    'accelerometer',
+    'clipboard-write',
+    'encrypted-media',
+    'gyroscope',
+    'picture-in-picture',
+  ]
+
+  const params = []
+
+  if (autoPlay) {
+    params.push('autoplay=1')
+    params.push('mute=1')
+
+    allowList.push('autoplay=1')
+    allowList.push('mute=1')
+  }
+
+  if (hideControls) {
+    params.push('controls=0')
+    params.push('showinfo=0')
+    params.push('rel=0')
+    params.push('modestbranding=1')
+
+    allowList.push('controls=0')
+    allowList.push('mute=1')
+    allowList.push('showinfo=0')
+    allowList.push('rel=0')
+    allowList.push('modestbranding=1')
+  }
+
+
+  if (loop) {
+    params.push('loop=1')
+    params.push(`playlist=${videoId}`)
+    allowList.push('loop')
+
+  }
+
+  if (params.length > 0) {
+    src += `?${params.join('&')}`
+  }
 
   if (startTime) {
     const startSecs = convertTimeStringToSeconds(startTime)
     src += `?start=${startSecs}`
   }
 
+  const allowStr = allowList.join('; ')
+
+  const iframe = <iframe
+    className="youtube-iframe"
+    width={width}
+    height={height}
+    src={src}
+    title={title}
+    frameBorder="0"
+    allow={allowStr}
+    allowFullScreen
+  />
+
+
+
   return (
     <div className="youtube-iframe-container">
-      <iframe
-        className="youtube-iframe"
-        width={width}
-        height={height}
-        src={src}
-        title={title}
-        frameBorder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
-      />
+      {iframe}
     </div>
   )
 }

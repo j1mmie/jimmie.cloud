@@ -9,7 +9,7 @@ export default function StarWars() {
       <ProjectHeader>Star Wars: Commander</ProjectHeader>
       <p>3d isometric Clash of Clans type game in the Star Wars universe</p>
 
-      <div className="video-grid">
+      <div className="portfolio-grid">
         <YouTubeIFrame videoId="ajkbIuLa9PE" title="Star Wars: Commander Trailer" />
         <YouTubeIFrame videoId="pUD2JkBxIJo" title="Star Wars: Commander Expansion Trailer" />
       </div>

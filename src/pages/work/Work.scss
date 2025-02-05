@@ -1,17 +1,22 @@
 @use '../../style/Sizes.scss';
 @use '../../style/ColorAssignments.scss';
 
-a.hero {
+div.hero a, a.hero {
   display: block;
 }
 
-a.hero:hover {
+a.hero:hover,  div.hero a:hover,
+a.hero:active, div.hero a:active {
   background: none;
-  outline: 4px solid ColorAssignments.$color-link;
-  outline-offset: -4px;
+
+  img {
+    outline: 4px solid ColorAssignments.$color-link-hover;
+    outline-offset: -4px;
+  }
 }
 
 div.hero img, a.hero img, img.hero {
+  display: block;
   object-fit: cover;
   width: 100%;
   margin-bottom: Sizes.lh(1);

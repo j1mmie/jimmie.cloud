@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 type AnsiArtProps = {
   sizeClass:'sm' | 'md' | 'lg' | 'xl',
   path:string,
+  lineHeightVar?:string,
   minLineCount?:number,
 }
 
@@ -17,9 +18,9 @@ export function AnsiArt(props:AnsiArtProps) {
 
   let style:React.CSSProperties = {}
 
-  if (props.minLineCount) {
+  if (props.minLineCount && props.lineHeightVar) {
     style = {
-      minHeight: `${props.minLineCount}em`
+      minHeight: `calc(${props.minLineCount} * var(--${props.lineHeightVar}));`
     }
   }
 

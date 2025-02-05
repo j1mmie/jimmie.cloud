@@ -299,7 +299,21 @@ em, i {
   height: Sizes.lh(12)
 }
 
-.video-grid {
+.portfolio-grid {
   display: grid;
   grid-template-columns: 41ch 39ch;
+
+  a:hover, a:active, a:focus {
+    background: transparent;
+  }
+
+  img {
+    width: 39ch;
+    margin-bottom: 1em;
+  }
+
+  a:hover img, a:active img {
+    outline: 4px solid ColorAssignments.$color-link-hover;
+    outline-offset: -4px;
+  }
 }

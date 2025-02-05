@@ -9,7 +9,7 @@ export default function Pirates() {
       <ProjectHeader>Pirates of the Caribbean: Isles of War</ProjectHeader>
       <p>Mobile game for the film franchise.</p>
 
-      <div className="video-grid">
+      <div className="portfolio-grid">
         <YouTubeIFrame videoId="cmPJIQFxU0M" title="Pirates of the Caribbean: Isles of War " />
       </div>
 

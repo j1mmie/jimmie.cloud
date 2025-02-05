@@ -7,9 +7,10 @@ export default function Slipstream() {
   return (
     <Project>
       <ProjectHeader>Slipstream: Rogue Space</ProjectHeader>
+      <p><a href="https://www.playslipstream.com" target="_blank">https://www.playslipstream.com</a></p>
       <p>120 player, co-operative strategy game.</p>
 
-      <div className="video-grid">
+      <div className="portfolio-grid">
         <YouTubeIFrame videoId="Uz-Si5reE5o" title="Slipstream Beta Launch Trailer" />
         <YouTubeIFrame videoId="fKxJ672j9x8" title="Slipstream / Captain.tv Partnership Announcement" />
         <YouTubeIFrame videoId="G3wM3CChS44" title="55 Player Simon-Says" />
@@ -35,8 +36,10 @@ export default function Slipstream() {
       </ul>
 
       <ProjectSubheader>Technologies Used:</ProjectSubheader>
-      <p><strong>Client: </strong>Unity, C#</p>
-      <p><strong>Server: </strong>Typescript, Google Cloud Platform, Kubernetes, Agones, AWS GameLift</p>
+      <p>
+        <strong>Client: </strong>Unity, C#<br />
+        <strong>Server: </strong>Typescript, Google Cloud Platform, Kubernetes, Agones, AWS GameLift
+      </p>
     </Project>
   )
 }

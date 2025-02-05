@@ -15,7 +15,7 @@ export default function Reflektive() {
         <img src={screenshot} />
       </a>
 
-      <div className="video-grid">
+      <div className="portfolio-grid">
         <YouTubeIFrame videoId="te0NhYU_qTo" title="Reflektive Product Overview" />
         <YouTubeIFrame videoId="UdvX7Ovi-r8" title="Reflektive x DigitalOcean" />
       </div>
@@ -37,11 +37,16 @@ export default function Reflektive() {
       </p>
 
       <ProjectSubheader>Technologies Used:</ProjectSubheader>
-      <p><strong>Server:</strong> Rails, Postgres, Typescript</p>
-      <p><strong>Web Client:</strong> Javascript, React</p>
-      <p><strong>Gmail Client:</strong> Javascript, React</p>
-      <p><strong>Outlook Mac:</strong> Objective-C</p>
-      <p><strong>Outlook Windows:</strong> C#, .NET</p>
+      <p>
+        <strong>Server:</strong> Rails, Postgres, Typescript<br />
+        <strong>Client:</strong>
+        <ul>
+          <li><strong>Website:</strong> Javascript, React, Backbone</li>
+          <li><strong>Gmail Plugin:</strong> Javascript, React, Backbone</li>
+          <li><strong>Outlook Mac App:</strong> Objective-C</li>
+          <li><strong>Outlook Windows Plugin:</strong> C#, .NET</li>
+        </ul>
+      </p>
     </Project>
   )
 }

@@ -7,12 +7,13 @@ export default function Goat() {
   return (
     <Project>
       <ProjectHeader>Ready Set Goat!</ProjectHeader>
+      <p><a href="https://www.readysetgoat.com" target="_blank">https://www.readysetgoat.com</a></p>
       <p>
         High-score chaser, one-button arcade game for Android and iOS.
         Developed as part of the One-Button Game Jam on itch.io
       </p>
 
-      <div className="video-grid">
+      <div className="portfolio-grid">
         <YouTubeIFrame
           videoId="vdRIyd0HJZ4"
           title="Ready Set Goat Launch Trailer"
@@ -27,8 +28,10 @@ export default function Goat() {
       <p>Solo developer, original art</p>
 
       <ProjectSubheader>Technologies Used:</ProjectSubheader>
-      <p><strong>Client:</strong> Unity, C#</p>
-      <p><strong>Server:</strong> Azure Playfab, Javascript</p>
+      <p>
+        <strong>Client:</strong> Unity, C#<br />
+        <strong>Server:</strong> Azure Playfab, Javascript
+      </p>
     </Project>
   )
 }

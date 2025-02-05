@@ -8,10 +8,10 @@ export function Header() {
   return (
     <div>
       <AnsiArtCanvas>
-        <AnsiArt sizeClass="xl" path="/ansi-html/jimmie-xl.html" minLineCount={16} />
-        <AnsiArt sizeClass="lg" path="/ansi-html/jimmie-lg.html" minLineCount={13} />
-        <AnsiArt sizeClass="md" path="/ansi-html/jimmie-md.html" minLineCount={6} />
-        <AnsiArt sizeClass="sm" path="/ansi-html/jimmie-sm.html" minLineCount={6} />
+        <AnsiArt sizeClass="xl" path="/ansi-html/jimmie-xl.html" lineHeightVar="lineHeight" minLineCount={16} />
+        <AnsiArt sizeClass="lg" path="/ansi-html/jimmie-lg.html" lineHeightVar="lineHeight" minLineCount={13} />
+        <AnsiArt sizeClass="md" path="/ansi-html/jimmie-md.html" lineHeightVar="lineHeight" minLineCount={6} />
+        <AnsiArt sizeClass="sm" path="/ansi-html/jimmie-sm.html" lineHeightVar="lineHeight" minLineCount={6} />
       </AnsiArtCanvas>
 
       <Hr width={80} />
