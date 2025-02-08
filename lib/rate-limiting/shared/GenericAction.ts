@@ -1,0 +1,1 @@
+export type GenericAction = (...args:unknown[]) => unknown

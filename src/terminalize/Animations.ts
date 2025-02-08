@@ -3,13 +3,20 @@ import { Helpers } from './Helpers'
 import { TerminalizeProps } from './TerminalizeProps'
 
 export class Animations {
-  public static teletypeRender(
+  public static teletypeErase(
+    element:HTMLElement,
+    topY:number
+  ) {
+    const closedHeight = topY - element.getBoundingClientRect().y - window.scrollY
+    element.style.setProperty('max-height', `${closedHeight}px`)
+  }
+
+  public static teletypeDraw(
     element:HTMLElement,
     char:HTMLElement,
     cursor:HTMLElement,
     intervalManager:IntervalManager,
     props:TerminalizeProps,
-    startY:number,
     startingLinesToRevealPerIteration:number,
     iterationsBetweenLineRevealCountChanges:number,
     linesToRevealCountChangeAmount:number,
@@ -23,9 +30,6 @@ export class Animations {
     const minCursorPos = 0
     const maxCursorPos = terminalWidthCh
 
-    const closedHeight = startY - element.getBoundingClientRect().y - window.scrollY
-    element.style.setProperty('max-height', `${closedHeight}px`)
-
     let currentLineRevealCount = startingLinesToRevealPerIteration
     let nextLineRevealCountChange = iterationsBetweenLineRevealCountChanges
     let iteration = 0
@@ -36,11 +40,11 @@ export class Animations {
       ) + minCursorPos
     }
 
-    function setCursorPosition(xChars:number) {
+    function setCursorPositionX(xChars:number) {
       cursor.style.setProperty('left', `${xChars}ch`)
     }
 
-    setCursorPosition(0)
+    setCursorPositionX(0)
     cursor.classList.remove('hidden')
     cursor.classList.add('no-block')
 
@@ -60,7 +64,7 @@ export class Animations {
       element.style.setProperty('max-height', `${nextHeight}px`)
       iteration++
 
-      setCursorPosition(randomCursorX())
+      setCursorPositionX(randomCursorX())
 
       const shouldStop =
         Helpers.isMaxHeightGreaterThanCurrentHeight(element) ||

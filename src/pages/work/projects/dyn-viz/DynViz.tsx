@@ -18,6 +18,12 @@ export default function DynViz() {
         <YouTubeIFrame videoId='aHH8cTbCoUE' autoPlay loop title='DynViz Demo' />
       </div>
 
+      <p>
+        DynViz was <a href="https://github.com/j1mmie/DynViz">open-sourced</a> some time after I left Dyn Inc., maybe 2013.
+        {' '}
+        But fair warning &mdash; I started the project a year out of college, and the code is indicative of that :D
+      </p>
+
       <ProjectSubheader>Role:</ProjectSubheader>
       <p>Developer, designer</p>
 

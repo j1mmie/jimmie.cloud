@@ -4,6 +4,7 @@ import { IntervalManager } from './IntervalManager'
 import { Helpers as Helpers } from './Helpers'
 import { TerminalizeProps } from './TerminalizeProps'
 import { Animations } from './Animations'
+import { Debounce } from '../../lib/rate-limiting/Debounce'
 
 const startingLinesToRevealPerIteration = 1
 const iterationsBetweenLineRevealCountChanges = 24
@@ -34,19 +35,22 @@ export function Terminalize(props:TerminalizeProps) {
 
     const intervalManager = new IntervalManager(speedAsIntervalMs)
 
-    const animate = (startY:number) => {
-      Animations.teletypeRender(
+    const teletypeErase = (topY:number) => {
+      Animations.teletypeErase(root, topY)
+    }
+
+    const teletypeDraw = new Debounce(() => {
+      Animations.teletypeDraw(
         root,
         char,
         cursor,
         intervalManager,
         props,
-        startY,
         startingLinesToRevealPerIteration,
         iterationsBetweenLineRevealCountChanges,
         linesToRevealCountChangeAmount,
       )
-    }
+    }, 200)
 
     const showEverything = () => {
       root.style.removeProperty('max-height')
@@ -56,7 +60,8 @@ export function Terminalize(props:TerminalizeProps) {
     const callback:MutationCallback = mutationList => {
       const topMostChanged = Helpers.getTopMostChangedNode(mutationList)
       if (topMostChanged) {
-        animate(topMostChanged.y)
+        teletypeErase(topMostChanged.y)
+        teletypeDraw.attempt()
       } else {
         showEverything()
       }
@@ -66,7 +71,8 @@ export function Terminalize(props:TerminalizeProps) {
     observer.observe(root, mutationConfig)
 
     // Only played on full page load/reload
-    animate(0)
+    teletypeErase(0)
+    teletypeDraw.attempt()
 
     return () => {
       observer.disconnect()

@@ -32,7 +32,9 @@ export default function Dyn() {
          size (~400kb).
       </p>
 
-      <YouTubeIFrame videoId='Np0VeQJwlI0' startTime='4m55s' title='DynDNS Updater Demo' />
+      <div className="hero">
+        <YouTubeIFrame videoId='Np0VeQJwlI0' startTime='4m55s' title='DynDNS Updater Demo' />
+      </div>
     </Project>
   )
 }
