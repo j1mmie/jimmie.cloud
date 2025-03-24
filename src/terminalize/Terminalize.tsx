@@ -15,12 +15,33 @@ const mutationConfig:MutationObserverInit = {
   subtree: true
 }
 
+class EraseAction {
+  private _value:number = Number.POSITIVE_INFINITY
+
+  public canEraseTo(value:number):boolean {
+    return value < this._value
+  }
+
+  public eraseTo(value:number) {
+    this._value = value
+  }
+
+  public reset() {
+    this._value = Number.POSITIVE_INFINITY
+  }
+}
+
 export function Terminalize(props:TerminalizeProps) {
   const rootRef = useRef<HTMLDivElement>(null)
   const charRef = useRef<HTMLDivElement>(null)
   const cursorRef = useRef<HTMLDivElement>(null)
 
+  const enabled = props.enabled ?? true
+  const initialMaxHeight = enabled ? '0' : 'none'
+
   useEffect(() => {
+    if (!enabled) return () => { }
+
     const root = rootRef.current
     if (!root) throw new Error('Terminalize root element is null')
 
@@ -35,11 +56,18 @@ export function Terminalize(props:TerminalizeProps) {
 
     const intervalManager = new IntervalManager(speedAsIntervalMs)
 
-    const teletypeErase = (topY:number) => {
-      Animations.teletypeErase(root, topY)
+    const eraseAction = new EraseAction()
+    const teletypeErase = (requestedEraseHeight:number) => {
+      if (!eraseAction.canEraseTo(requestedEraseHeight)) {
+        return
+      }
+
+      eraseAction.eraseTo(requestedEraseHeight)
+      Animations.teletypeErase(root, requestedEraseHeight)
     }
 
     const teletypeDraw = new Debounce(() => {
+      eraseAction.reset()
       Animations.teletypeDraw(
         root,
         char,
@@ -79,11 +107,11 @@ export function Terminalize(props:TerminalizeProps) {
       intervalManager.stop()
     }
   }, [
-    props
+    props, enabled
   ])
 
   return (
-    <div ref={rootRef} className="terminalize" style={{maxHeight: '0'}}>
+    <div ref={rootRef} className="terminalize" style={{maxHeight: initialMaxHeight}}>
       <div ref={cursorRef} className="cursor hidden">
         <span ref={charRef} className="char" />
         <span className="blocker" />

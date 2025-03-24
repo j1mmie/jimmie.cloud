@@ -20,7 +20,7 @@ export function AnsiArt(props:AnsiArtProps) {
 
   if (props.minLineCount && props.lineHeightVar) {
     style = {
-      minHeight: `calc(${props.minLineCount} * var(--${props.lineHeightVar}));`
+      minHeight: `calc(${props.minLineCount} * var(--${props.lineHeightVar}))`
     }
   }
 

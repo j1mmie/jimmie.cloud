@@ -27,12 +27,12 @@ function App() {
 
   return (
     <VerticalExpander>
-      <Grid className="main-content">
+      <Grid className="main-content crt">
         <Background />
         <div className="even-ch-width">
           <Terminalize
             lineHeightPixels={24}
-            linesPerSecond={60}
+            linesPerSecond={32}
           >
             <Header />
 

@@ -1,4 +1,4 @@
-import RawXml from './Hitboxes.xml?raw'
+import RawXml from './Hitboxes.xhtml?raw'
 import { BackLink } from '../../components/back-link/BackLink'
 
 export default function Hitboxes() {

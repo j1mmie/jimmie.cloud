@@ -22,15 +22,13 @@ export default function HomePage() {
           <h3>Currently working on</h3>
           <ul>
             <li><a href="https://www.playslipstream.com" target="_blank">Slipstream: Rogue Space</a></li>
-            <li><a href="https://github.com/j1mmie/jimmie.cloud" target="_blank">This website</a></li>
-            <li>A <a href="https://www.reddit.com/r/cyberdeck" target="_blank">Cyberdeck</a></li>
           </ul>
         </div>
         <div>
           <h3>Currently playing</h3>
           <ul>
-            <li><a href="https://store.steampowered.com/app/1836730/Echo_Point_Nova/" target="_blank">Echo Point Nova</a></li>
-            <li>Minecraft</li>
+            <li><a href="https://www.playbalatro.com/" target="_blank">Balatro</a></li>
+            <li><a href="https://store.steampowered.com/app/1608230/Planet_of_Lana/" target="_blank">Planet of Lana</a></li>
           </ul>
         </div>
       </div>
