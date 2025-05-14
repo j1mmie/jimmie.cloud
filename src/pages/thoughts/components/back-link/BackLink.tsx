@@ -3,6 +3,6 @@ import './BackLink.scss'
 
 export function BackLink() {
   return (
-    <p><NavLink to="/blog" className="back-link">Back to all articles</NavLink></p>
+    <p><NavLink to="/thoughts" className="back-link">Back to Thoughts</NavLink></p>
   )
 }
