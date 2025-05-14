@@ -1,7 +1,7 @@
 import { ArticleList } from './article-list/ArticleList'
-import './Blog.scss'
+import './Thoughts.scss'
 
-export function Blog() {
+export function Thoughts() {
   return (
     <div>
       <h2>Random Thoughts</h2>
