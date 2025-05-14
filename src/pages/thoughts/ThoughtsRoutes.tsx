@@ -1,9 +1,9 @@
 import { Route, Routes } from 'react-router-dom'
-import { Blog } from './Blog'
+import { Thoughts } from './Thoughts'
 import { articleDefs } from './ArticleDefs'
 import { PageLoader } from '../../components/molecules/page-loader/PageLoader'
 
-export default function BlogRoutes() {
+export default function ThoughtsRoutes() {
   const articleRoutes = articleDefs.map(articleDef => {
     const pageLoader = (
       <PageLoader>
@@ -18,7 +18,7 @@ export default function BlogRoutes() {
 
   return (
     <Routes>
-      <Route path="/" Component={Blog} />
+      <Route path="/" Component={Thoughts} />
       {articleRoutes}
     </Routes>
   )
