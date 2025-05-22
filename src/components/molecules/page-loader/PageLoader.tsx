@@ -7,7 +7,7 @@ type PageLoaderProps = {
   children:JSX.Element
 }
 
-export function PageLoader(props:PageLoaderProps) {
+export function PageLoaderWIP(props:PageLoaderProps) {
   const fallback = <Centerer><AsciiSpinner /></Centerer>
 
   return (
@@ -15,4 +15,8 @@ export function PageLoader(props:PageLoaderProps) {
       {props.children}
     </Suspense>
   )
+}
+
+export function PageLoader(props:PageLoaderProps) {
+  return <div>{props.children}</div>
 }
