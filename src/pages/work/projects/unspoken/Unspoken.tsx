@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router'
 import ProjectHeader from '../../projects-core/project/header/ProjectHeader'
 import Project from '../../projects-core/project/Project'
 

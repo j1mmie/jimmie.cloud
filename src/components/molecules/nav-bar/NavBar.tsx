@@ -1,10 +1,11 @@
 import { CSSProperties } from 'react'
 import './NavBar.scss'
-import { NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router'
 
 export type NavBarItem = {
   title:string
   to:string
+  comp?:React.FC | React.LazyExoticComponent<React.FC>
 }
 
 type NavBarProps = {

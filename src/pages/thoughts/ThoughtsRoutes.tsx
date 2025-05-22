@@ -1,18 +1,18 @@
-import { Route, Routes } from 'react-router-dom'
-import { Thoughts } from './Thoughts'
+import { Route, Routes } from 'react-router'
 import { articleDefs } from './ArticleDefs'
 import { PageLoader } from '../../components/molecules/page-loader/PageLoader'
+import Thoughts from './Thoughts'
 
 export default function ThoughtsRoutes() {
   const articleRoutes = articleDefs.map(articleDef => {
-    const pageLoader = (
-      <PageLoader>
+    const articleLoader = (
+      <PageLoader key={`article-route-loader-${articleDef.to}`}>
         <articleDef.lazyComp />
       </PageLoader>
     )
 
     return (
-      <Route key={articleDef.to} path={articleDef.to} element={pageLoader} />
+      <Route key={articleDef.to} path={articleDef.to} element={articleLoader} />
     )
   })
 

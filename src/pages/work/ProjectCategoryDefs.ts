@@ -10,24 +10,24 @@ export const projectCategoryDefs:ProjectCategoryDef[] = [
       {
         to:       'slipstream',
         title:    'Slipstream: Rogue Space',
-        lazyComp: Projects.Slipstream,
+        comp:     Projects.Slipstream,
         desc:     '120 player co-op game for desktop/mobile (Unity)',
       },
       {
         to:       'starwars',
         title:    'Star Wars: Commander',
-        lazyComp: Projects.StarWars,
+        comp:     Projects.StarWars,
         desc:     '3d isometric mobile RTS game (Unity)',
       },
       {
         to:       'pirates',
         title:    'Pirates of the Caribbean: Isles of War',
-        lazyComp: Projects.Pirates,
+        comp:     Projects.Pirates,
         desc:     'multiplayer strategy game (Flash)',
       },
       {
         title:    'others',
-        lazyComp: undefined,
+        comp:     undefined,
         desc:     'Other Playdom / Disney games: City of Wonder, Armies of Magic, Lil\' Farm Life, Verdonia'
 
       }
@@ -41,31 +41,31 @@ export const projectCategoryDefs:ProjectCategoryDef[] = [
       {
         to:       'reflektive',
         title:    'Reflektive',
-        lazyComp: Projects.Reflektive,
-        desc:  'employee performance management suite',
+        comp:     Projects.Reflektive,
+        desc:     'employee performance management suite',
       },
       {
         to:       'topo',
         title:    'Topo Patient Search',
-        lazyComp: Projects.Topo,
+        comp:     Projects.Topo,
         desc:     'medical record search and management',
       },
       {
         to:       'dyn',
         title:    'Dyn Updater',
-        lazyComp: Projects.Dyn,
+        comp:     Projects.Dyn,
         desc:     'dynamic DNS updater for Windows',
       },
       {
         to:       'dynViz',
         title:    'DynViz',
-        lazyComp: Projects.DynViz,
+        comp:     Projects.DynViz,
         desc:     'realtime 3d visualization of global DNS queries',
       },
       {
         to:       'dynect',
         title:    'Dynect',
-        lazyComp: Projects.Dynect,
+        comp:     Projects.Dynect,
         desc:     'enterprise DNS management platform',
       },
     ]
@@ -78,19 +78,19 @@ export const projectCategoryDefs:ProjectCategoryDef[] = [
       {
         to:       'surf',
         title:    'Procedural Surf',
-        lazyComp: Projects.Surf,
+        comp:     Projects.Surf,
         desc:     'procedural parkour FPS, à la Counter-Strike surf maps',
       },
       {
         to:       'nfinity',
         title:    'Nfinity',
-        lazyComp: Projects.Nfinity,
+        comp:     Projects.Nfinity,
         desc:     'generate 3d explorable art galleries for NFTs',
       },
       {
         to:       'goat',
         title:    'Ready Set Goat',
-        lazyComp: Projects.Goat,
+        comp:     Projects.Goat,
         desc:     'goat-themed mobile arcade game w/ global leaderboard',
       }
       ,
@@ -104,7 +104,7 @@ export const projectCategoryDefs:ProjectCategoryDef[] = [
       {
         to:       'unspoken',
         title:    'Unspoken',
-        lazyComp: Projects.Unspoken,
+        comp:     Projects.Unspoken,
         desc:     'library for condensing network messagings in Typescript',
       }
 
