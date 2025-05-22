@@ -1,6 +1,6 @@
 import './ProjectList.scss'
 import { ProjectCategoryDef } from '../projects-core/ProjectCategoryDef'
-import { Outlet } from 'react-router-dom'
+import { Outlet } from 'react-router'
 import { NavTree } from '../../../components/molecules/nav-tree/NavTree'
 
 type ProjectListProps = {
@@ -15,7 +15,6 @@ function ProjectList(props:ProjectListProps) {
   return (
     <div>
       <NavTree items={props.categoryDef.projectDefs} />
-
       <Outlet />
     </div>
   )

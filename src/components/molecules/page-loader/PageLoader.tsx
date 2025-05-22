@@ -1,14 +1,22 @@
-import { Suspense } from 'react'
+import { JSX, Suspense } from 'react'
+import { AsciiSpinner } from '../../atoms/ascii-spinner/AsciiSpinner'
+import { Centerer } from '../centerer/Centerer'
 
 type PageLoaderProps = {
-  children?:React.ReactNode | React.ReactNode[]
+  key:string
+  children:JSX.Element
 }
 
-export function PageLoader(props:PageLoaderProps) {
+export function PageLoaderWIP(props:PageLoaderProps) {
+  const fallback = <Centerer><AsciiSpinner /></Centerer>
+
   return (
-    <Suspense fallback={<>Loading...</>}>
+    <Suspense key={props.key} fallback={fallback}>
       {props.children}
     </Suspense>
   )
 }
 
+export function PageLoader(props:PageLoaderProps) {
+  return <div>{props.children}</div>
+}

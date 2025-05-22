@@ -1,8 +1,8 @@
-import { Outlet } from 'react-router-dom'
+import { Outlet } from 'react-router'
 import { CategoryList } from './category-list/CategoryList'
 import './Work.scss'
 
-export function Work() {
+export const Work = () => {
   return (
     <div>
       <h2>My Work</h2>
@@ -11,3 +11,5 @@ export function Work() {
     </div>
   )
 }
+
+export default Work

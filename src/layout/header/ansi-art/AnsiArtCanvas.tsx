@@ -4,6 +4,7 @@ type AnsiArtCanvasProps = {
   children?:React.ReactNode | React.ReactNode[]
 }
 
+// TODO: Convert to using Centerer?
 export function AnsiArtCanvas(props:AnsiArtCanvasProps) {
   return (
     <div className="ansi-art-canvas">

@@ -1,7 +1,7 @@
 import { ArticleList } from './article-list/ArticleList'
 import './Thoughts.scss'
 
-export function Thoughts() {
+const Thoughts = () => {
   return (
     <div>
       <h2>Random Thoughts</h2>
@@ -9,3 +9,5 @@ export function Thoughts() {
     </div>
   )
 }
+
+export default Thoughts

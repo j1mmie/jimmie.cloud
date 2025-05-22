@@ -2,7 +2,7 @@ import './App.scss'
 
 import { Footer } from './layout/footer/Footer'
 import { Header } from './layout/header/Header'
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route } from 'react-router'
 import { NavBar} from './components/molecules/nav-bar/NavBar'
 import { Grid } from './debug/Grid'
 import { routes } from './Routes'
@@ -13,15 +13,14 @@ import { PageLoader } from './components/molecules/page-loader/PageLoader'
 
 function App() {
   const routeElements = routes.map(route => {
-
-    const pageLoader = (
-      <PageLoader>
-        <route.lazyComp />
+    const routeLoader = (
+      <PageLoader key={`app-route-loader-${route.id}`}>
+        <route.comp />
       </PageLoader>
     )
 
     return (
-      <Route key={route.id} path={route.path} element={pageLoader} />
+      <Route key={route.id} path={route.path} element={routeLoader} />
     )
   })
 
@@ -41,6 +40,7 @@ function App() {
             <Routes>
               {routeElements}
             </Routes>
+
             <Footer />
           </Terminalize>
         </div>
