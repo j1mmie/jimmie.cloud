@@ -27,8 +27,8 @@ export default function HomePage() {
         <div>
           <h3>Currently playing</h3>
           <ul>
-            <li><a href="https://www.playbalatro.com/" target="_blank">Balatro</a></li>
-            <li><a href="https://store.steampowered.com/app/1608230/Planet_of_Lana/" target="_blank">Planet of Lana</a></li>
+            <li><a href="https://store.steampowered.com/app/553420/TUNIC/" target="_blank">Tunic</a></li>
+            <li><a href="https://store.steampowered.com/app/3504780/Wildgate/" target="_blank">Wildgate</a></li>
           </ul>
         </div>
       </div>
