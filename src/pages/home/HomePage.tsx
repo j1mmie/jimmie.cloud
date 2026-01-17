@@ -28,6 +28,7 @@ export default function HomePage() {
           <h3>Currently playing</h3>
           <ul>
             <li><a href="https://store.steampowered.com/app/2807960/Battlefield_6/" target="_blank">Battlefield 6</a></li>
+            <li><a href="https://store.steampowered.com/app/1174180/" target="_blank">RDR 2</a></li>
             <li><a href="https://store.steampowered.com/app/1569580/Blue_Prince/" target="_blank">Blue Prince</a></li>
           </ul>
         </div>
