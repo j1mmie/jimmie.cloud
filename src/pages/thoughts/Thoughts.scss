@@ -1,9 +1,45 @@
-
-.wp-block-image, .wp-block-embed, .wp-block-video, .grid-align-v {
-  display: none;
-}
+@use '../../style/Sizes.scss';
 
 figure {
   margin: 0;
   padding: 0;
+}
+
+// Article media, sized in grid cells: --w columns (ch) by --h lines.
+// object-fit: cover trims the 1-2% an image's aspect differs from its cells,
+// so its edges land exactly on the grid.
+.media {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: 2ch;
+  margin: 0 0 Sizes.lh(1) 0;
+
+  > img, > video, > iframe {
+    display: block;
+    width: calc(var(--w) * 1ch);
+    height: Sizes.lh(var(--h));
+    object-fit: cover;
+  }
+
+  > figcaption {
+    flex-basis: 100%;
+  }
+}
+
+// Same breakpoint as Mobile.scss's cw(56): too narrow to hold the grid sizes,
+// so media scales down to the column and keeps its own aspect
+@media (max-width: 784px) {
+  .media {
+    row-gap: Sizes.lh(1);
+
+    > img, > video, > iframe {
+      width: min(calc(var(--w) * 1ch), 100%);
+      height: auto;
+    }
+
+    > iframe {
+      aspect-ratio: 4 / 3;
+    }
+  }
 }

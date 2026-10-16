@@ -2,9 +2,9 @@
     "http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">
 
 <html>
-  <h2>Hitboxes The Feel Good</h2>
+  <h2>Hitboxes That Feel Good</h2>
 
-  <p>NOTE: This is an old blog article I posted, ported from my previous website. Haven't had time to hunt down the images yet</p>
+  <p>NOTE: This is an old blog article I posted, ported from my previous website.</p>
 
   <!-- wp:paragraph -->
   <p>Update: Ready Set Goat has been released! Check out more at <a href="https://www.readysetgoat.com">www.ReadySetGoat.com</a></p>
@@ -26,9 +26,10 @@
   <p>We're developing a game that utilizes an age old mechanic - the <a href="https://tvtropes.org/pmwiki/pmwiki.php/Main/GoombaStomp">Goomba Stomp</a>.</p>
   <!-- /wp:paragraph -->
 
-  <!-- wp:video {"id":198,"align":"center"} -->
-  <figure class="wp-block-video aligncenter"><video autoplay controls loop muted src="https://www.subpixel.net/wp-content/uploads/2020/03/79214DBD-5D6D-4FBF-8F7D-5FC56D851537.mp4" playsinline></video><figcaption>Ready Set Goat gameplay clips</figcaption></figure>
-  <!-- /wp:video -->
+  <figure class="media">
+    <video autoplay controls loop muted playsinline src="media/gameplay.mp4" style="--w: 28; --h: 15"></video>
+    <figcaption>Ready Set Goat gameplay clips</figcaption>
+  </figure>
 
   <!-- wp:paragraph -->
   <p>There's a common classical approach to this mechanic. A single, monolithic hitbox representing the physical space of the character. And that space is used for everything - stomping, getting hurt, and bumping into walls. (If you can't tell, I'm foreshadowing here.)</p>
@@ -38,19 +39,19 @@
   <p>Here's what the Goomba Stomp looks like in Mario, with an overlay of the hitboxes next to it:</p>
   <!-- /wp:paragraph -->
 
-  <!-- wp:paragraph {"align":"center"} -->
-  <p class="has-text-align-center"><img class="wp-image-51" style="width: 256px;" src="https://www.subpixel.net/wp-content/uploads/2020/03/ezgif.com-optimize.gif" alt="Mario stomping"> <img class="wp-image-63" style="width: 256px;" src="https://www.subpixel.net/wp-content/uploads/2020/03/Mario-Hitboxes.gif" alt="Mario stomping with hitboxes"></p>
-  <!-- /wp:paragraph -->
+  <figure class="media">
+    <img src="media/mario-stomp.gif" alt="Mario stomping" style="--w: 28; --h: 15"/>
+    <img src="media/mario-stomp-hitboxes.gif" alt="Mario stomping with hitboxes" style="--w: 28; --h: 15"/>
+  </figure>
 
   <!-- wp:paragraph -->
   <p>By the way, there's a great video on YouTube that overlays the hitboxes for an entire speedrun. This is just fun to watch; check it out:</p>
   <!-- /wp:paragraph -->
 
-  <!-- wp:core-embed/youtube {"url":"https://www.youtube.com/watch?v=eDaYK1cOCmw","type":"video","providerNameSlug":"youtube","className":"wp-embed-aspect-4-3 wp-has-aspect-ratio"} -->
-  <figure class="wp-block-embed-youtube wp-block-embed is-type-video is-provider-youtube wp-embed-aspect-4-3 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
-  https://www.youtube.com/watch?v=eDaYK1cOCmw
-  </div><figcaption>Courtesy user <a href="https://www.youtube.com/channel/UCzYROBp4ypAEOEy7G89aGaQ">qvidz on Youtube</a></figcaption></figure>
-  <!-- /wp:core-embed/youtube -->
+  <figure class="media">
+    <iframe src="https://www.youtube.com/embed/eDaYK1cOCmw" title="Super Mario Bros Hitboxes Exposed" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" style="--w: 40; --h: 16"></iframe>
+    <figcaption>Courtesy user <a href="https://www.youtube.com/channel/UCzYROBp4ypAEOEy7G89aGaQ">qvidz on Youtube</a></figcaption>
+  </figure>
 
   <!-- wp:paragraph -->
   <p>The first thing you'll notice is, <em>you suck at Mario</em></p>
@@ -89,14 +90,10 @@
   <p>But here's the problem:</p>
   <!-- /wp:paragraph -->
 
-  <!-- wp:image {"align":"center","id":184,"width":300,"height":300,"sizeSlug":"large"} -->
-  <div class="grid-align-v">
-    <figure class="aligncenter size-large is-resized">
-      <img src="https://www.subpixel.net/wp-content/uploads/2020/03/Mario-Tight.gif" alt="" class="wp-image-184" width="300" height="300"/>
-      <figcaption>Mario visually stomps an enemy, but gets killed</figcaption>
-    </figure>
-  </div>
-  <!-- /wp:image -->
+  <figure class="media">
+    <img src="media/mario-tight.gif" alt="Mario landing on a Goomba with tight hitboxes" style="--w: 28; --h: 15"/>
+    <figcaption>Mario visually stomps an enemy, but gets killed</figcaption>
+  </figure>
 
   <!-- wp:paragraph -->
   <p>See that? That extra breathing room works both ways. Now it benefits the Goomba.</p>
@@ -118,9 +115,10 @@
   <p>Loose hitboxes work the opposite way. They give the player a huge footprint, allowing them to stomp from greater distances. In fact, the player might earn a stomp without any pixels touching. Right out of thin air.</p>
   <!-- /wp:paragraph -->
 
-  <!-- wp:image {"align":"center","id":185,"width":300,"height":300,"sizeSlug":"large"} -->
-  <div class="wp-block-image"><figure class="aligncenter size-large is-resized"><img src="https://www.subpixel.net/wp-content/uploads/2020/03/Mario-Loose1.gif" alt="" class="wp-image-185" width="300" height="300"/><figcaption>Mario doesn't quite earn a stomp yet, but is awarded one</figcaption></figure></div>
-  <!-- /wp:image -->
+  <figure class="media">
+    <img src="media/mario-loose-1.gif" alt="Mario stomping a Goomba from a distance with loose hitboxes" style="--w: 28; --h: 15"/>
+    <figcaption>Mario doesn't quite earn a stomp yet, but is awarded one</figcaption>
+  </figure>
 
   <!-- wp:paragraph -->
   <p>There are a few downsides to this approach. The first is that it might be too easy to stomp. You might think that that makes the game less challenging. But it actually makes it less <em>predictable</em>. In some cases, the player might not want to stomp because the implications could lead them to their death. So by trying to make things easier, we've just made the game more challenging.</p>
@@ -130,17 +128,19 @@
   <p>In Ready Set Goat, choosing when to stomp is just as important as choosing when not to stomp.</p>
   <!-- /wp:paragraph -->
 
-  <!-- wp:video {"id":213,"align":"center"} -->
-  <figure class="wp-block-video aligncenter"><video autoplay controls loop muted src="https://www.subpixel.net/wp-content/uploads/2020/03/5E6F3418-3F1D-40BF-AA8B-8F381B2CAF95.mp4" playsinline></video><figcaption>Stomping an enemy at the wrong time could accidentally bounce the goat off into a different enemy.</figcaption></figure>
-  <!-- /wp:video -->
+  <figure class="media">
+    <video autoplay controls loop muted playsinline src="media/stomp-wrong-time.mp4" style="--w: 28; --h: 15"></video>
+    <figcaption>Stomping an enemy at the wrong time could accidentally bounce the goat off into a different enemy.</figcaption>
+  </figure>
 
   <!-- wp:paragraph -->
   <p>The worst problem though, is that the player might time a jump <em>really</em> close to the enemy, and clip them on the way up, resulting in the player's death.</p>
   <!-- /wp:paragraph -->
 
-  <!-- wp:image {"align":"center","id":188,"width":300,"height":300,"sizeSlug":"large"} -->
-  <div class="wp-block-image"><figure class="aligncenter size-large is-resized"><img src="https://www.subpixel.net/wp-content/uploads/2020/03/Mario-Loose2-1.gif" alt="" class="wp-image-188" width="300" height="300"/><figcaption>Mario should safely jump over the Goomba with this trajectory. But the hitboxes are too big and he gets owned.</figcaption></figure></div>
-  <!-- /wp:image -->
+  <figure class="media">
+    <img src="media/mario-loose-2.gif" alt="Mario clipping a Goomba on the way up with loose hitboxes" style="--w: 28; --h: 15"/>
+    <figcaption>Mario should safely jump over the Goomba with this trajectory. But the hitboxes are too big and he gets owned.</figcaption>
+  </figure>
 
   <!-- wp:heading {"level":3} -->
   <h3>3. Pixel Perfect</h3>
@@ -150,9 +150,10 @@
   <p>Pixel Perfect hitboxes are an opinionated response to the question "How much breathing room should I give the player?" Its answer is<strong> exactly none</strong>. The player's stomps will connect predictably, but the player gets no leeway if they make a mistake.</p>
   <!-- /wp:paragraph -->
 
-  <!-- wp:image {"align":"center","id":191,"width":300,"height":300,"sizeSlug":"large"} -->
-  <div class="wp-block-image"><figure class="aligncenter size-large is-resized"><img src="https://www.subpixel.net/wp-content/uploads/2020/03/image-8.png" alt="" class="wp-image-191" width="300" height="300"/><figcaption>Unforgiving pixel-perfect collisions</figcaption></figure></div>
-  <!-- /wp:image -->
+  <figure class="media">
+    <img src="media/pixel-perfect.png" alt="Mario and a Goomba overlapping by a single pixel" style="--w: 28; --h: 12"/>
+    <figcaption>Unforgiving pixel-perfect collisions</figcaption>
+  </figure>
 
   <!-- wp:paragraph -->
   <p>While the community over at <strong><a href="http://reddit.com/r/hitboxporn">/r/hitboxporn</a></strong> might disagree, I believe this approach leads to an unforgiving game. While testing it out, I found myself frustrated with the exactness of Pixel Perfection.</p>
@@ -170,9 +171,10 @@
   <p>The last common approach I can think of is Composite Hitboxes. However this approach doesn't answer the question "How much breathing room should I give the player?" It gives you a more accurate representation of the player's volume (just like Pixel Perfect), but the developer is still left to decide whether that space should be Tight or Loose.</p>
   <!-- /wp:paragraph -->
 
-  <!-- wp:image {"align":"center","id":189,"width":300,"height":300,"sizeSlug":"large"} -->
-  <div class="wp-block-image"><figure class="aligncenter size-large is-resized"><img src="https://www.subpixel.net/wp-content/uploads/2020/03/image-6.png" alt="" class="wp-image-189" width="300" height="300"/><figcaption>Example of composite hitboxes</figcaption></figure></div>
-  <!-- /wp:image -->
+  <figure class="media">
+    <img src="media/composite-hitboxes.png" alt="The goat with separate hitboxes for its head and body" style="--w: 28; --h: 15"/>
+    <figcaption>Example of composite hitboxes</figcaption>
+  </figure>
 
   <!-- wp:paragraph -->
   <p>The approach by itself doesn't solve anything for us. But what about the idea in general? Multiple hitboxes... maybe we're on to something here.</p>
@@ -206,9 +208,10 @@
   <p>Fighting games use a different concept; a <strong>hurtbox</strong> and a <strong>hitbox</strong>. A hurtbox is the space where the player is vulnerable; where they get hurt. A hitbox is where a player's hits land.</p>
   <!-- /wp:paragraph -->
 
-  <!-- wp:image {"align":"center","id":152,"width":300,"height":300,"sizeSlug":"large"} -->
-  <div class="wp-block-image"><figure class="aligncenter size-large is-resized"><img src="https://www.subpixel.net/wp-content/uploads/2020/03/Ryu-HurtboxHitbox.png" alt="" class="wp-image-152" width="300" height="300"/><figcaption>Fighter games break out character space into two types: Hitboxes and Hurtboxes</figcaption></figure></div>
-  <!-- /wp:image -->
+  <figure class="media">
+    <img src="media/ryu-hurtbox-hitbox.png" alt="Ryu kicking, with a hurtbox around his body and a hitbox around his foot" style="--w: 28; --h: 15"/>
+    <figcaption>Fighter games break out character space into two types: Hitboxes and Hurtboxes</figcaption>
+  </figure>
 
   <!-- wp:paragraph -->
   <h3>A note on terminology:</h3>
@@ -247,9 +250,10 @@
   <p>Then I organized my colliders in game to represent this scheme.</p>
   <!-- /wp:paragraph -->
 
-  <!-- wp:image {"align":"center","id":206,"sizeSlug":"large"} -->
-  <div class="wp-block-image"><figure class="aligncenter size-large"><img src="https://www.subpixel.net/wp-content/uploads/2020/03/Goat-HitHurtBoundingBox-1.gif" alt="" class="wp-image-206"/><figcaption>Final box design of my Goat character</figcaption></figure></div>
-  <!-- /wp:image -->
+  <figure class="media">
+    <img src="media/goat-boxes.gif" alt="The goat's hitbox, hurtbox, and bounding box" style="--w: 30; --h: 15"/>
+    <figcaption>Final box design of my Goat character</figcaption>
+  </figure>
 
   <!-- wp:paragraph -->
   <p>And I did the same thing with the enemies.</p>
@@ -279,17 +283,17 @@
   <p>The player can get a stomp even when the Goat is a few pixels away. This fixes the problem with Tight Hitboxes. See how the Goat's Hurtbox and the Enemy's Hitbox connect even from some distance:</p>
   <!-- /wp:paragraph -->
 
-  <!-- wp:image {"align":"center","id":209,"width":300,"height":300,"sizeSlug":"large"} -->
-  <div class="wp-block-image"><figure class="aligncenter size-large is-resized"><img src="https://www.subpixel.net/wp-content/uploads/2020/03/Goat-ForgiveStomp.gif" alt="" class="wp-image-209" width="300" height="300"/></figure></div>
-  <!-- /wp:image -->
+  <figure class="media">
+    <img src="media/goat-forgive-stomp.gif" alt="The goat stomping an enemy from a few pixels away" style="--w: 28; --h: 15"/>
+  </figure>
 
   <!-- wp:paragraph -->
   <p>But they can still narrowly avoid an Enemy on the upward jump. This is an improvement over the Loose Hitboxes. Check out how the Goat's Hitbox and Enemy's Hurtbox near-miss eachother in this gif:</p>
   <!-- /wp:paragraph -->
 
-  <!-- wp:image {"align":"center","id":208,"width":300,"height":300,"sizeSlug":"large"} -->
-  <div class="wp-block-image"><figure class="aligncenter size-large is-resized"><img src="https://www.subpixel.net/wp-content/uploads/2020/03/Goat-CloseCall.gif" alt="" class="wp-image-208" width="300" height="300"/></figure></div>
-  <!-- /wp:image -->
+  <figure class="media">
+    <img src="media/goat-close-call.gif" alt="The goat narrowly jumping past an enemy" style="--w: 28; --h: 15"/>
+  </figure>
 
   <!-- wp:paragraph -->
   <p>The player gets room to breath, but can still stomp without feeling cheated.</p>
@@ -315,9 +319,10 @@
   <p>For a one-size-fits-all solution to this problem in Unity, you'll need six layers. You could probably get away with less, but this really makes it obvious what's happening under the hood.</p>
   <!-- /wp:paragraph -->
 
-  <!-- wp:image {"align":"center","id":155,"width":312,"height":417,"sizeSlug":"large"} -->
-  <div class="wp-block-image"><figure class="aligncenter size-large is-resized"><img src="https://www.subpixel.net/wp-content/uploads/2020/03/Screen-Shot-2020-03-19-at-2.04.48-PM-1.png" alt="" class="wp-image-155" width="312" height="417"/><figcaption>6 Layers for Hitboxes That Feel Good™️</figcaption></figure></div>
-  <!-- /wp:image -->
+  <figure class="media">
+    <img src="media/unity-layers.png" alt="Unity's Tags and Layers settings with the six layers" style="--w: 24; --h: 17"/>
+    <figcaption>6 Layers for Hitboxes That Feel Good™️</figcaption>
+  </figure>
 
   <!-- wp:heading {"level":3} -->
   <h3><strong>Step 2: Setup the collision matrix</strong></h3>
@@ -327,9 +332,9 @@
   <p>You'll need to tweak the collision matrix to support this scheme, as follows:</p>
   <!-- /wp:paragraph -->
 
-  <!-- wp:image {"id":157,"sizeSlug":"large"} -->
-  <figure class="wp-block-image size-large"><img src="https://www.subpixel.net/wp-content/uploads/2020/03/image.png" alt="" class="wp-image-157"/></figure>
-  <!-- /wp:image -->
+  <figure class="media">
+    <img src="media/unity-collision-matrix.png" alt="Unity's layer collision matrix with three checked pairs" style="--w: 34; --h: 15"/>
+  </figure>
 
   <!-- wp:paragraph -->
   <p>Notice how few checkmarks there are. There's really only 3 collisions we need to worry about</p>
@@ -351,33 +356,34 @@
   <p>So that's one parent GameObject representing the character's Bounding Box. One child GameObject for the Hitbox. And a sibling to that child, a GameObject for the Hurtbox. Let's see what that looks like as a hierarchy:</p>
   <!-- /wp:paragraph -->
 
-  <!-- wp:image {"id":371,"sizeSlug":"large"} -->
-  <figure class="wp-block-image size-large"><img src="https://subpixel.net/wp-content/uploads/2020/04/image-1024x427.png" alt="" class="wp-image-371"/></figure>
-  <!-- /wp:image -->
+  <pre><code>Character    (Bounding Box)
+├── Hitbox   (Hitbox)
+└── Hurtbox  (Hurtbox)</code></pre>
 
   <!-- wp:paragraph -->
   <p>In the real world, in Unity, that translates to this:</p>
   <!-- /wp:paragraph -->
 
-  <!-- wp:paragraph -->
-  <p> <img class="wp-image-163" style="width: 256px;" src="https://www.subpixel.net/wp-content/uploads/2020/03/image-4.png" alt=""> </p>
-  <!-- /wp:paragraph -->
+  <figure class="media">
+    <img src="media/unity-hierarchy.png" alt="Unity hierarchy: Goat with GoatSprite, Hitbox, and Hurtbox children" style="--w: 20; --h: 8"/>
+  </figure>
 
   <!-- wp:paragraph -->
   <p>My parent GameObject gets the Bounding Box Collider. Therefore, it's also on the <code>BoundingBoxes</code> layer.</p>
   <!-- /wp:paragraph -->
 
-  <!-- wp:paragraph -->
-  <p><img class="wp-image-164" style="width: 256px;" src="https://www.subpixel.net/wp-content/uploads/2020/03/Screen-Shot-2020-03-19-at-2.45.26-PM.png" alt=""> </p>
-  <!-- /wp:paragraph -->
+  <figure class="media">
+    <img src="media/unity-goat-inspector.png" alt="Inspector for the Goat GameObject on the BoundingBoxes layer" style="--w: 22; --h: 18"/>
+  </figure>
 
   <!-- wp:paragraph -->
   <p>The two children, Hitbox and Hurtbox, get their Colliders on the appropriate layers as well.</p>
   <!-- /wp:paragraph -->
 
-  <!-- wp:paragraph -->
-  <p><img class="wp-image-165" style="width: 256px;" src="https://www.subpixel.net/wp-content/uploads/2020/03/Screen-Shot-2020-03-19-at-2.45.32-PM.png" alt=""> <img class="wp-image-166" style="width: 256px;" src="https://www.subpixel.net/wp-content/uploads/2020/03/Screen-Shot-2020-03-19-at-2.45.39-PM.png" alt=""></p>
-  <!-- /wp:paragraph -->
+  <figure class="media">
+    <img src="media/unity-goat-hitbox-inspector.png" alt="Inspector for the Hitbox child on the PlayerHitboxes layer" style="--w: 22; --h: 18"/>
+    <img src="media/unity-goat-hurtbox-inspector.png" alt="Inspector for the Hurtbox child on the PlayerHurtboxes layer" style="--w: 22; --h: 18"/>
+  </figure>
 
   <!-- wp:paragraph -->
   <p>Note that all my colliders have <code>Is Trigger</code> checked. That's because I don't use the built in Unity Physics system for Ready Set Goat. I handle all of the collision interactions manually, and triggers simply notify me when they happen. Triggers don't simulate physics reactions, they just alert you when an overlap occurs. If you want to use Unity Physics with this approach, you might want to uncheck the <code>Is Trigger</code> box, and add some RigidBody's to the root GameObject.</p>
@@ -387,17 +393,19 @@
   <p>Anyway, here's that gif of the goat again, showing what these 3 colliders look like in one image.</p>
   <!-- /wp:paragraph -->
 
-  <!-- wp:image {"align":"center","id":206,"sizeSlug":"large"} -->
-  <div class="wp-block-image"><figure class="aligncenter size-large"><img src="https://www.subpixel.net/wp-content/uploads/2020/03/Goat-HitHurtBoundingBox-1.gif" alt="" class="wp-image-206"/></figure></div>
-  <!-- /wp:image -->
+  <figure class="media">
+    <img src="media/goat-boxes.gif" alt="The goat's hitbox, hurtbox, and bounding box" style="--w: 30; --h: 15"/>
+  </figure>
 
   <!-- wp:paragraph -->
   <p>The same approach is taken with my enemy characters, except I use the <code>EnemyHitboxes</code> and <code>EnemyHurtboxes</code> layers instead:</p>
   <!-- /wp:paragraph -->
 
-  <!-- wp:paragraph -->
-  <p><img class="wp-image-167" style="width: 150px;" src="https://www.subpixel.net/wp-content/uploads/2020/03/Screen-Shot-2020-03-19-at-2.54.14-PM.png" alt=""> <img class="wp-image-168" style="width: 150px;" src="https://www.subpixel.net/wp-content/uploads/2020/03/Screen-Shot-2020-03-19-at-2.54.18-PM.png" alt=""> <img class="wp-image-169" style="width: 150px;" src="https://www.subpixel.net/wp-content/uploads/2020/03/Screen-Shot-2020-03-19-at-2.54.26-PM.png" alt=""></p>
-  <!-- /wp:paragraph -->
+  <figure class="media">
+    <img src="media/unity-enemy-green.png" alt="Green enemy with its boxes shown in Unity" style="--w: 15; --h: 7"/>
+    <img src="media/unity-enemy-red.png" alt="Red enemy with its boxes shown in Unity" style="--w: 20; --h: 7"/>
+    <img src="media/unity-enemy-orange.png" alt="Orange enemy with its boxes shown in Unity" style="--w: 13; --h: 7"/>
+  </figure>
 
   <!-- wp:heading {"level":3} -->
   <h3><strong>Step 4: Attack!</strong></h3>
@@ -411,9 +419,10 @@
   <p>For example, on my Player's Hurtbox, I want to handle Stomps.</p>
   <!-- /wp:paragraph -->
 
-  <!-- wp:image {"align":"center","id":170,"width":367,"height":217,"sizeSlug":"large"} -->
-  <div class="wp-block-image"><figure class="aligncenter size-large is-resized"><img src="https://www.subpixel.net/wp-content/uploads/2020/03/image-5.png" alt="" class="wp-image-170" width="367" height="217"/><figcaption>A script that detects when a Player stomps on an Enemy, and applies damage as necessary</figcaption></figure></div>
-  <!-- /wp:image -->
+  <figure class="media">
+    <img src="media/unity-stomp-script.png" alt="Inspector for the player's Hurtbox with a Stomp script" style="--w: 32; --h: 10"/>
+    <figcaption>A script that detects when a Player stomps on an Enemy, and applies damage as necessary</figcaption>
+  </figure>
 
   <!-- wp:paragraph -->
   <p>Your script might look something like this</p>
@@ -451,9 +460,10 @@
   <p>Your enemies will need to attack too. Let's add a script for that:</p>
   <!-- /wp:paragraph -->
 
-  <!-- wp:image {"align":"center","id":172,"width":369,"height":218,"sizeSlug":"large"} -->
-  <div class="wp-block-image"><figure class="aligncenter size-large is-resized"><img src="https://www.subpixel.net/wp-content/uploads/2020/03/Screen-Shot-2020-03-19-at-3.13.28-PM.png" alt="" class="wp-image-172" width="369" height="218"/><figcaption>The attack script that enemies have</figcaption></figure></div>
-  <!-- /wp:image -->
+  <figure class="media">
+    <img src="media/unity-kill-player-script.png" alt="Inspector for an enemy's Hurtbox with a Kill Player on Touch script" style="--w: 32; --h: 10"/>
+    <figcaption>The attack script that enemies have</figcaption>
+  </figure>
 
   <!-- wp:paragraph -->
   <p>And the code is pretty similar, except we don't need to check if the enemy is descending vertically:</p>
@@ -482,9 +492,9 @@
   <p>Note that I'm no longer working on the Hurtboxes. I'm placing this script on the Hitbox. Here's an example of my Player's Hitbox:</p>
   <!-- /wp:paragraph -->
 
-  <!-- wp:image {"align":"center","id":176,"width":370,"height":236,"sizeSlug":"large"} -->
-  <div class="wp-block-image"><figure class="aligncenter size-large is-resized"><img src="https://www.subpixel.net/wp-content/uploads/2020/03/Screen-Shot-2020-03-19-at-3.26.42-PM.png" alt="" class="wp-image-176" width="370" height="236"/></figure></div>
-  <!-- /wp:image -->
+  <figure class="media">
+    <img src="media/unity-inform-parent-script.png" alt="Inspector for the player's Hitbox with an Inform Parent On Destroy script" style="--w: 32; --h: 11"/>
+  </figure>
 
   <!-- wp:paragraph -->
   <p>The <code>InformParentOnDestroy</code> script will simply call <code>Destroy</code> on a specific object when the Hitbox itself is destroyed. We could <em>guess</em> what the Parent is, say, by calling <code>transform.parent.gameObject</code>. But in practice, your character prefab hierarchies will be much deeper and complex. It's better to be explicit here. Here's an example of what that code looks like:</p>
@@ -550,7 +560,7 @@
   <p>That approach is just a bit outside the scope of this post, so I leave it as an exercise to the reader.</p>
   <!-- /wp:paragraph -->
 
-  <!-- wp:image {"align":"center","id":195,"width":300,"sizeSlug":"large"} -->
-  <div class="wp-block-image"><figure class="aligncenter size-large is-resized"><img src="https://www.subpixel.net/wp-content/uploads/2020/03/Goat-CoolRun.gif" alt="" class="wp-image-195" width="300"/></figure></div>
-  <!-- /wp:image -->
+  <figure class="media">
+    <img src="media/goat-cool-run.gif" alt="The goat running in sunglasses" style="--w: 28; --h: 15"/>
+  </figure>
 </div>
