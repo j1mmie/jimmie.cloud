@@ -6,13 +6,36 @@
     <title>Jimmie Tyrrell - Projects</title>
 
     <script type="text/javascript">
+      // Input Mono's ascent + descent (1.273em + 0.409em) is taller than our 1.2em
+      // line-height, so selection highlights and text hit areas spill ~5px into
+      // neighbouring lines. Re-declare Typekit's faces as "input-mono-fitted" with
+      // metrics that fit inside the line. Ascent minus descent stays 0.864em, which
+      // keeps the baseline where it was; the exact values are picked so browsers
+      // that snap metrics to whole pixels also land on the same baselines at 20,
+      // 40 and 60px.
+      function addFittedFontFaces(sheet) {
+        try {
+          const rules = Array.from(sheet.cssRules).filter(rule => rule instanceof CSSFontFaceRule)
+          const css = window.document.createElement('style')
+          css.textContent = rules.map(rule => rule.cssText
+            .replace(/font-family:[^;]+;/, 'font-family: "input-mono-fitted";')
+            .replace(/}\s*$/, 'ascent-override: 97.4%; descent-override: 11%; }')
+          ).join('\n')
+          window.document.head.appendChild(css)
+        } catch (e) {
+          // Stylesheet not readable; the page falls back to plain "input-mono"
+        }
+      }
+
       // Load the final font after the page has loaded
       function loadCSS(linkEl) {
+        addFittedFontFaces(linkEl.sheet)
+
         const css = window.document.createElement('style')
         css.type = 'text/css'
 
         // Override the font-family for the page
-        const textNode = window.document.createTextNode('html { font-family: "input-mono", monospace !important; }')
+        const textNode = window.document.createTextNode('html { font-family: "input-mono-fitted", "input-mono", monospace !important; }')
         css.appendChild(textNode)
 
         setTimeout(() => {

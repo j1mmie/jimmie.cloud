@@ -69,6 +69,21 @@ a {
   text-decoration-thickness: 2px;
   display: inline-block;
   // transition: color 0.15s;
+
+  // Input Mono's glyph box (ascent + descent) is taller than our line-height,
+  // so text overhangs its line by a few px and browsers hit-test that overhang.
+  // The next line's text would then cover the bottom of the link. Instead, only
+  // this overlay is clickable: it covers exactly the link's own box, and being
+  // positioned, it sits above the overhang of neighbouring lines.
+  position: relative;
+  pointer-events: none;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: auto;
+  }
 }
 
 a:hover {
@@ -148,6 +163,8 @@ ul.airy {
 }
 
 code {
+  // Unfitted on purpose (see index.html): an inline background is sized by the
+  // font's ascent + descent, so this keeps the chips' height as designed
   font-family: 'input-mono', monospace;
   font-size: 1rem;
   margin-left: -4px;
@@ -169,7 +186,7 @@ pre {
 
 pre code {
   display: block;
-  font-family: 'input-mono', monospace;
+  font-family: 'input-mono-fitted', 'input-mono', monospace;
   border-radius: 0.25ch;
   background: rgba(Colors.$color-green, 0.2);
   outline: 1px solid rgba(Colors.$color-green, 0.5);
