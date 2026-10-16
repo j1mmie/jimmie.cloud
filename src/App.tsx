@@ -10,8 +10,12 @@ import { Terminalize } from './terminalize/Terminalize'
 import { Background } from './layout/header/background/Background'
 import { VerticalExpander } from './terminalize/VerticalExpander'
 import { PageLoader } from './components/molecules/page-loader/PageLoader'
+import { ScrollToTop } from './layout/scroll-to-top/ScrollToTop'
+import { useRef } from 'react'
 
 function App() {
+  const contentRef = useRef<HTMLDivElement>(null)
+
   const routeElements = routes.map(route => {
     const routeLoader = (
       <PageLoader key={`app-route-loader-${route.id}`}>
@@ -26,9 +30,10 @@ function App() {
 
   return (
     <VerticalExpander>
+      <ScrollToTop contentRef={contentRef} />
       <Grid className="main-content crt">
         <Background />
-        <div className="even-ch-width">
+        <div ref={contentRef} className="even-ch-width">
           <Terminalize
             lineHeightPixels={24}
             linesPerSecond={32}

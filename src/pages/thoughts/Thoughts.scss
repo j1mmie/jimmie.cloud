@@ -13,6 +13,8 @@ figure {
   flex-wrap: wrap;
   justify-content: center;
   column-gap: 2ch;
+  // A blank line between rows keeps the media's drop shadow off the caption
+  row-gap: Sizes.lh(1);
   margin: 0 0 Sizes.lh(1) 0;
 
   > img, > video, > iframe {
@@ -22,17 +24,27 @@ figure {
     object-fit: cover;
   }
 
+  // 60% wide plus 20% margins fills a whole row, so it always wraps below the
+  // media instead of fitting beside it
   > figcaption {
-    flex-basis: 100%;
+    width: 60%;
+    margin: 0 20%;
+    font-size: .8rem;
+    // Keep the full line height so each caption line still fills one grid line
+    line-height: var(--line-height);
+    color: rgba(255, 255, 255, .6);
   }
+}
+
+// Media with a transparent background
+.on-white {
+  background: white;
 }
 
 // Same breakpoint as Mobile.scss's cw(56): too narrow to hold the grid sizes,
 // so media scales down to the column and keeps its own aspect
 @media (max-width: 784px) {
   .media {
-    row-gap: Sizes.lh(1);
-
     > img, > video, > iframe {
       width: min(calc(var(--w) * 1ch), 100%);
       height: auto;

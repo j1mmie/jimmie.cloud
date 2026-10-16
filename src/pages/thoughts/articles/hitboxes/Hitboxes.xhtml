@@ -91,7 +91,7 @@
   <!-- /wp:paragraph -->
 
   <figure class="media">
-    <img src="media/mario-tight.gif" alt="Mario landing on a Goomba with tight hitboxes" style="--w: 28; --h: 15"/>
+    <img class="on-white" src="media/mario-tight.gif" alt="Mario landing on a Goomba with tight hitboxes" style="--w: 28; --h: 15"/>
     <figcaption>Mario visually stomps an enemy, but gets killed</figcaption>
   </figure>
 
@@ -116,7 +116,7 @@
   <!-- /wp:paragraph -->
 
   <figure class="media">
-    <img src="media/mario-loose-1.gif" alt="Mario stomping a Goomba from a distance with loose hitboxes" style="--w: 28; --h: 15"/>
+    <img class="on-white" src="media/mario-loose-1.gif" alt="Mario stomping a Goomba from a distance with loose hitboxes" style="--w: 28; --h: 15"/>
     <figcaption>Mario doesn't quite earn a stomp yet, but is awarded one</figcaption>
   </figure>
 
@@ -138,7 +138,7 @@
   <!-- /wp:paragraph -->
 
   <figure class="media">
-    <img src="media/mario-loose-2.gif" alt="Mario clipping a Goomba on the way up with loose hitboxes" style="--w: 28; --h: 15"/>
+    <img class="on-white" src="media/mario-loose-2.gif" alt="Mario clipping a Goomba on the way up with loose hitboxes" style="--w: 28; --h: 15"/>
     <figcaption>Mario should safely jump over the Goomba with this trajectory. But the hitboxes are too big and he gets owned.</figcaption>
   </figure>
 
@@ -429,27 +429,26 @@
   <!-- /wp:paragraph -->
 
   <!-- wp:melonpan-block/code {"language":"csharp","theme":"atom_dark","view":"previewer","label_enabled":true} -->
-  <div class="wp-block-melonpan-block-code mbcode-theme-atom_dark mbcode-scheme-dark mbcode-padding_tb-40 mbcode-padding_lr-30" data-language="csharp"><pre><code>using UnityEngine;
+  <pre><code class="language-csharp">using UnityEngine;
 
-  public class Stomp : MonoBehaviour {
-    private float _prevY;
+public class Stomp : MonoBehaviour {
+  private float _prevY;
 
-    private void FixedUpdate() {
-      _prevY = transform.position.y;
-    }
+  private void FixedUpdate() {
+    _prevY = transform.position.y;
+  }
 
-    private bool IsDescending() {
-      return transform.position.y &lt; _prevY;
-    }
+  private bool IsDescending() {
+    return transform.position.y &lt; _prevY;
+  }
 
-    private void OnTriggerEnter2D(Collider2D collider) {
-      if (IsDescending()) {
-        Debug.Log("Player stomped an Enemy. Destroying the Enemy.");
-        Destroy(collider.gameObject);
-      }
+  private void OnTriggerEnter2D(Collider2D collider) {
+    if (IsDescending()) {
+      Debug.Log("Player stomped an Enemy. Destroying the Enemy.");
+      Destroy(collider.gameObject);
     }
   }
-  </code></pre><div class="mbcode-label"><span>C#</span></div></div>
+}</code></pre>
   <!-- /wp:melonpan-block/code -->
 
   <!-- wp:paragraph -->
@@ -470,14 +469,14 @@
   <!-- /wp:paragraph -->
 
   <!-- wp:melonpan-block/code {"language":"csharp","view":"previewer"} -->
-  <div class="wp-block-melonpan-block-code mbcode-theme-tomorrow_night mbcode-scheme-dark mbcode-padding_tb-40 mbcode-padding_lr-30" data-language="csharp"><pre><code>using UnityEngine;
+  <pre><code class="language-csharp">using UnityEngine;
 
-  public class KillPlayerOnTouch : MonoBehaviour {
-    private void OnTriggerEnter2D(Collider2D collider) {
-      Debug.Log("Enemy touched a Player. Killing Player.");
-      Destroy(collider.gameObject);
-    }
-  }</code></pre></div>
+public class KillPlayerOnTouch : MonoBehaviour {
+  private void OnTriggerEnter2D(Collider2D collider) {
+    Debug.Log("Enemy touched a Player. Killing Player.");
+    Destroy(collider.gameObject);
+  }
+}</code></pre>
   <!-- /wp:melonpan-block/code -->
 
   <!-- wp:heading {"level":3} -->
@@ -501,15 +500,15 @@
   <!-- /wp:paragraph -->
 
   <!-- wp:melonpan-block/code {"language":"csharp","view":"previewer"} -->
-  <div class="wp-block-melonpan-block-code mbcode-theme-tomorrow_night mbcode-scheme-dark mbcode-padding_tb-40 mbcode-padding_lr-30" data-language="csharp"><pre><code>using UnityEngine;
+  <pre><code class="language-csharp">using UnityEngine;
 
-  public class InformParentOnDestroy : MonoBehaviour {
-    public GameObject Parent;
+public class InformParentOnDestroy : MonoBehaviour {
+  public GameObject Parent;
 
-    private void OnDestroy() {
-      Destroy(Parent);
-    }
-  }</code></pre></div>
+  private void OnDestroy() {
+    Destroy(Parent);
+  }
+}</code></pre>
   <!-- /wp:melonpan-block/code -->
 
   <!-- wp:paragraph -->
@@ -557,7 +556,7 @@
   <!-- /wp:paragraph -->
 
   <!-- wp:paragraph -->
-  <p>That approach is just a bit outside the scope of this post, so I leave it as an exercise to the reader.</p>
+  <p>That's a bit outside the scope of this post, so I leave it as an exercise for the reader.</p>
   <!-- /wp:paragraph -->
 
   <figure class="media">

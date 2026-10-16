@@ -3,12 +3,6 @@ import './HomePage.scss'
 export default function HomePage() {
   return (
     <article>
-      <p>
-        <strong>
-          WORK IN PROGRESS:
-        </strong>{" "}
-        Some pages on this site are not complete yet.
-      </p>
       <h2>Hello</h2>
       <p>
         My name is Jimmie Tyrrell and I like to make things.
@@ -28,8 +22,6 @@ export default function HomePage() {
           <h3>Currently playing</h3>
           <ul>
             <li><a href="https://store.steampowered.com/app/2807960/Battlefield_6/" target="_blank">Battlefield 6</a></li>
-            <li><a href="https://store.steampowered.com/app/1174180/" target="_blank">Red Dead Redemption 2</a></li>
-            <li><a href="https://store.steampowered.com/app/1569580/Blue_Prince/" target="_blank">Blue Prince</a></li>
           </ul>
         </div>
       </div>

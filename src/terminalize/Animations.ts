@@ -23,7 +23,11 @@ export class Animations {
   ) {
     const charWidthPx = char.offsetWidth || 12
 
-    const terminalWidthPx = element.offsetWidth
+    // Content width only, so the cursor never lands in the element's padding
+    const elementStyle = getComputedStyle(element)
+    const terminalWidthPx = element.clientWidth
+      - parseFloat(elementStyle.paddingLeft)
+      - parseFloat(elementStyle.paddingRight)
     const terminalWidthCh = terminalWidthPx / charWidthPx
 
     const lineHeight = props.lineHeightPixels

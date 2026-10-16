@@ -163,38 +163,42 @@ ul.airy {
 }
 
 code {
-  // Unfitted on purpose (see index.html): an inline background is sized by the
-  // font's ascent + descent, so this keeps the chips' height as designed
   font-family: 'input-mono', monospace;
   font-size: 1rem;
-  margin-left: -4px;
-  padding: 0px 1ch;
-  // padding: 1px 4px;
-  border-radius: 0.25ch;
-  background: rgba(Colors.$color-green, 0.2);
-  // outline: 1px solid rgba(Colors.$color-green, 0.5);
-  // outline-offset: -1px;
+  background: rgba(240, 240, 255, .15);
+  display: inline-block;
+  
 }
 
 .airy code {
   padding: 4px 1ch;
 }
 
+// Hard drop shadow shared by code blocks and media. It reaches 1ch past the
+// box's bottom and right, so whatever follows needs a blank line to clear it
+$drop-shadow: rgba(0, 0, 0, .2) 1ch 1ch 0;
+
+img, video, iframe {
+  box-shadow: $drop-shadow;
+}
+
 pre {
   margin: Sizes.lh(1) 0;
 }
 
-pre code {
+// The second selector out-specifies Prism's theme, which gives any
+// code[class*="language-"] its own font, line height and background
+pre code,
+pre code[class*="language-"] {
   display: block;
   font-family: 'input-mono-fitted', 'input-mono', monospace;
-  border-radius: 0.25ch;
-  background: rgba(Colors.$color-green, 0.2);
-  outline: 1px solid rgba(Colors.$color-green, 0.5);
-  outline-offset: -1px;
+  background: rgba(240, 240, 255, .08);
+  line-height: inherit;
   padding: Sizes.lh(1) 2ch;
   margin: 0;
   overflow-x: auto;
   white-space: pre;
+  box-shadow: $drop-shadow;
 }
 
 table {
