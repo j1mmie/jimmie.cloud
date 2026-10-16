@@ -163,6 +163,8 @@ ul.airy {
 }
 
 code {
+  // Unfitted on purpose (see index.html): an inline background is sized by the
+  // font's ascent + descent, so this keeps the chips' height as designed
   font-family: 'input-mono', monospace;
   font-size: 1rem;
   margin-left: -4px;
@@ -184,7 +186,7 @@ pre {
 
 pre code {
   display: block;
-  font-family: 'input-mono', monospace;
+  font-family: 'input-mono-fitted', 'input-mono', monospace;
   border-radius: 0.25ch;
   background: rgba(Colors.$color-green, 0.2);
   outline: 1px solid rgba(Colors.$color-green, 0.5);
