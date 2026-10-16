@@ -1,6 +1,8 @@
 import React from 'react'
+// Most visits land here, so it ships with the main bundle instead of costing
+// a second round trip before anything renders
+import HomePage from './pages/home/HomePage'
 
-const HomePage = React.lazy(() => import('./pages/home/HomePage'))
 const Thoughts = React.lazy(() => import('./pages/thoughts/ThoughtsRoutes'))
 const Work     = React.lazy(() => import('./pages/work/WorkRoutes'))
 const Other    = React.lazy(() => import('./pages/other/Other'))

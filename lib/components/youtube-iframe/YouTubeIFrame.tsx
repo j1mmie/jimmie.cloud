@@ -3,6 +3,7 @@
 
 import React from 'react'
 import './YouTubeIFrame.scss'
+import { youTubeFacadeDoc } from './YouTubeFacade'
 
 interface YouTubeIFrameProps {
   videoId:string,
@@ -20,6 +21,8 @@ function convertTimeStringToSeconds(timeString:string) {
   return parseInt(minutes) * 60 + parseInt(seconds.slice(0, -1))
 }
 
+const allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+
 const YouTubeIFrame:React.FC<YouTubeIFrameProps> = ({
   videoId,
   title,
@@ -30,70 +33,53 @@ const YouTubeIFrame:React.FC<YouTubeIFrameProps> = ({
   loop = false,
   hideControls = false
 }) => {
-  let src = `https://www.youtube.com/embed/${videoId}`
-
-  const allowList = [
-    'accelerometer',
-    'clipboard-write',
-    'encrypted-media',
-    'gyroscope',
-    'picture-in-picture',
-  ]
-
-  const params = []
+  const params = new URLSearchParams()
 
   if (autoPlay) {
-    params.push('autoplay=1')
-    params.push('mute=1')
-
-    allowList.push('autoplay=1')
-    allowList.push('mute=1')
+    params.set('autoplay', '1')
+    params.set('mute', '1')
   }
 
   if (hideControls) {
-    params.push('controls=0')
-    params.push('showinfo=0')
-    params.push('rel=0')
-    params.push('modestbranding=1')
-
-    allowList.push('controls=0')
-    allowList.push('mute=1')
-    allowList.push('showinfo=0')
-    allowList.push('rel=0')
-    allowList.push('modestbranding=1')
+    params.set('controls', '0')
+    params.set('showinfo', '0')
+    params.set('rel', '0')
+    params.set('modestbranding', '1')
   }
-
 
   if (loop) {
-    params.push('loop=1')
-    params.push(`playlist=${videoId}`)
-    allowList.push('loop')
-
-  }
-
-  if (params.length > 0) {
-    src += `?${params.join('&')}`
+    params.set('loop', '1')
+    params.set('playlist', videoId)
   }
 
   if (startTime) {
-    const startSecs = convertTimeStringToSeconds(startTime)
-    src += `?start=${startSecs}`
+    params.set('start', convertTimeStringToSeconds(startTime).toString())
   }
 
-  const allowStr = allowList.join('; ')
+  let src = `https://www.youtube.com/embed/${videoId}`
+
+  const query = params.toString()
+  if (query) {
+    src += `?${query}`
+  }
+
+  // Autoplaying embeds are meant to be moving when you see them, so they get
+  // the real player straight away; lazy loading still keeps it off the
+  // critical path until it's near the viewport
+  const srcDoc = autoPlay ? undefined : youTubeFacadeDoc(videoId, src)
 
   const iframe = <iframe
     className="youtube-iframe"
     width={width}
     height={height}
     src={src}
+    srcDoc={srcDoc}
     title={title}
     frameBorder="0"
-    allow={allowStr}
+    allow={allow}
     allowFullScreen
+    loading="lazy"
   />
-
-
 
   return (
     <div className="youtube-iframe-container">

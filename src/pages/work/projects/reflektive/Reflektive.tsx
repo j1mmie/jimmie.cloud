@@ -3,6 +3,7 @@ import ProjectHeader from '../../projects-core/project/header/ProjectHeader'
 import Project from '../../projects-core/project/Project'
 import ProjectSubheader from '../../projects-core/project/sub-header/ProjectSubheader'
 import screenshot from './images/reflektive.png'
+import screenshotOpt from './images/reflektive-opt.webp'
 import '../../Work.scss'
 
 export default function Reflektive() {
@@ -11,8 +12,9 @@ export default function Reflektive() {
       <ProjectHeader>Reflektive</ProjectHeader>
       <p>Enterprise real-time feedback and performance management platform</p>
 
+      {/* The page shows a web-sized copy; the full-size original only loads if clicked */}
       <a href={screenshot} className="hero" target="_blank">
-        <img src={screenshot} />
+        <img src={screenshotOpt} />
       </a>
 
       <div className="portfolio-grid">

@@ -7,6 +7,9 @@ import prism from 'vite-plugin-prismjs'
 export default defineConfig({
   build: {
     sourcemap: false,
+    // Article media loads lazily, so inlining even the tiny files would only
+    // make the article's chunk slower to arrive
+    assetsInlineLimit: filePath => filePath.includes('/articles/') ? false : undefined,
     terserOptions: {
       compress: {
         drop_debugger: true,

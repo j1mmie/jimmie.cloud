@@ -86,7 +86,12 @@ export function Terminalize(props:TerminalizeProps) {
     }
 
     const callback:MutationCallback = mutationList => {
-      const topMostChanged = Helpers.getTopMostChangedNode(mutationList)
+      // Swapping one iframe for another (a YouTube thumbnail for its player)
+      // leaves the layout as it was, so there's nothing to retype
+      const changes = mutationList.filter(mutation => !Helpers.isIframeSwap(mutation))
+      if (!changes.length) return
+
+      const topMostChanged = Helpers.getTopMostChangedNode(changes)
       if (topMostChanged) {
         teletypeErase(topMostChanged.y)
         teletypeDraw.attempt()

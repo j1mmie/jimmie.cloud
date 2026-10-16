@@ -29,6 +29,11 @@ export class Helpers {
   }
 
 
+  public static isIframeSwap(mutation:MutationRecord) {
+    const nodes = [...mutation.addedNodes, ...mutation.removedNodes]
+    return nodes.length > 0 && nodes.every(node => node instanceof HTMLIFrameElement)
+  }
+
   public static getTopMostChangedNode(mutationList:MutationRecord[]):TopMostChangeNodeResult | undefined {
     let currentHighestY = Number.MAX_VALUE
     let currentHighest:Node | undefined = undefined
